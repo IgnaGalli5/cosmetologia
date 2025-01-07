@@ -88,6 +88,55 @@ body, html {
     
 }
 
+.location .gif-container {
+    position: relative;
+    width: 60px;  /* Ancho del GIF más grande */
+    height: 80px; /* Alto del GIF original */
+    margin: 0 auto;
+}
+
+.location .original-gif,
+.location .hover-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.location .original-gif {
+    opacity: 1;
+}
+
+.location .hover-gif {
+    opacity: 0;
+}
+
+.location:hover .original-gif {
+    opacity: 0;
+}
+
+.location:hover .hover-gif {
+    opacity: 1;
+}
+
+/* Estilos específicos para cada GIF hover */
+#projects .hover-gif {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+#studies .hover-gif {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+#about .hover-gif {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
 .location {
     text-align: center; /* Centra el contenido */
     font-size: 12px; /* Tamaño del texto */
@@ -99,7 +148,7 @@ body, html {
     margin: 0 auto; /* Centra la imagen horizontalmente */
     max-width: 150%; /* Asegura que la imagen no desborde */
     cursor: pointer; /* Cambia el cursor para indicar un vínculo */
-    width: 60px;
+    width: 45px;
 }
 
 .location a {
