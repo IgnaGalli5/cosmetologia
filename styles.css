@@ -1,0 +1,210 @@
+/* Importar fuente Star Wars */
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+
+/* === RESET Y CONFIGURACIÓN GLOBAL === */
+body, html {
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina rellenos predeterminados */
+    height: 100%; /* Altura completa de la ventana */
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    font-family: Arial, sans-serif; /* Fuente principal */
+    font-size: 16px; /* Tamaño de fuente predeterminado */
+    color: white; /* Texto blanco */
+    background-image: url(/imagen/space.jpg); /* Imagen de fondo del espacio */
+    background-size: cover; /* La imagen cubre toda la ventana */
+}
+
+/* === HEADER Y NAVEGACIÓN === */
+header {
+    position: relative; /* Posicionamiento relativo para elementos internos */
+    width: 100%; /* Ocupa todo el ancho */
+    z-index: 30; /* Encima de otros elementos */
+    margin-bottom: 50px; /* Espaciado debajo del header */
+}
+
+#banner {
+    position: relative; /* Posicionamiento relativo para la imagen */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 350px; /* Altura fija del banner */
+    overflow: hidden; /* Oculta contenido fuera del área */
+}
+
+#banner-image {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+}
+
+nav {
+    width: 100%; /* Ocupa todo el ancho */
+    background-image: url(/imagen/barra.jpeg); /* Imagen de fondo para la barra de navegación */
+    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+    color: #FFD700; /* Color del texto (dorado) */
+    padding: 10px 0; /* Espaciado interno vertical */
+    font-family: 'Star Wars', sans-serif; /* Fuente temática de Star Wars */
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+nav ul {
+    display: flex; /* Disposición flexible de los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el relleno predeterminado */
+    margin: 0; /* Elimina el margen predeterminado */
+}
+
+nav ul li {
+    margin: 5px; /* Espaciado entre elementos de la lista */
+}
+
+nav ul li a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-size: 1em; /* Tamaño de fuente */
+    font-weight: bold; /* Texto en negrita */
+    padding: 5px 10px; /* Espaciado interno de los enlaces */
+    transition: color 0.3s, text-shadow 0.3s; /* Transición suave para efectos hover */
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    color: rgb(0, 183, 255); /* Color al pasar el mouse o enfocar */
+    text-shadow: 0 0 10px rgba(0, 255, 221, 0.8); /* Efecto de brillo */
+    outline: none; /* Elimina el contorno predeterminado al enfocar */
+}
+
+/* === CONTENIDO PRINCIPAL === */
+#portfolio-content {
+    position: relative; /* Posicionamiento relativo para z-index */
+    z-index: 10; /* Por encima del fondo */
+    padding: 170px 20px 20px; /* Espaciado interno */
+    min-height: calc(100vh - 170px); /* Altura mínima para ocupar la pantalla */
+    overflow-y: auto; /* Permite desplazamiento vertical */
+    margin-top: -150px; /* Ajuste para evitar solapamientos */
+}
+
+/* === EFECTOS Y ANIMACIONES === */
+#laser-container {
+    position: fixed; /* Fijado en la pantalla */
+    top: 0; /* Alineado al borde superior */
+    left: 0; /* Alineado al borde izquierdo */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    pointer-events: none; /* No bloquea la interacción */
+    z-index: 20; /* Sobre otros elementos */
+}
+
+.laser {
+    animation: laserFade 1s ease-out forwards; /* Animación de desvanecimiento */
+    animation-delay: calc(var(--laser-index) * 0.2s); /* Retraso dinámico */
+}
+
+@keyframes laserFade {
+    from { opacity: 1; } /* Comienza visible */
+    to { opacity: 0; } /* Desaparece */
+}
+.particle {
+    position: absolute;
+    background-color: red; /* Ajusta según sea necesario */
+    border-radius: 50%;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    to {
+        transform: translate(var(--tx), var(--ty));
+        opacity: 0;
+    }
+}
+
+
+#starship-container {
+    position: fixed; /* Fijado en la pantalla */
+    bottom: -50px; /* Posicionado debajo del borde inferior */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino del centrado */
+    display: flex; /* Disposición flexible */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: flex-end; /* Alinea el contenido al fondo */
+    z-index: 100; /* Sobre otros elementos */
+    animation: floating 3s ease-in-out infinite; /* Animación de flotación */
+    transition: left 0.3s; /* Transición suave para movimiento lateral */
+}
+
+#starship-interior {
+    max-width: 50%; /* Limita el ancho máximo */
+    height: auto; /* Mantiene la proporción */
+    object-fit: contain; /* Ajusta la imagen sin recortar */
+}
+
+
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0px); } /* Posición inicial y final */
+    50% { transform: translateY(-10px); } /* Punto más alto de la flotación */
+}
+
+/* === REDES SOCIALES === */
+.redes {
+    display: flex; /* Disposición flexible */
+    justify-content: center; /* Centra los iconos horizontalmente */
+    align-items: center; /* Centra los iconos verticalmente */
+    width: 100%; /* Ocupa todo el ancho */
+    margin-bottom: 50px; /* Espaciado inferior */
+}
+
+.redes a {
+    display: inline-block; /* Permite dimensiones */
+    margin: 0 20px; /* Espaciado horizontal entre iconos */
+    animation: floating 3s ease-in-out infinite; /* Animación de flotación */
+    position: relative; /* Para posicionamiento de elementos hijos */
+    text-align: center; /* Centra el contenido */
+}
+
+.redes img {
+    height: 50px; /* Altura fija de los iconos */
+    width: 50px; /* Ancho fijo de los iconos */
+    transition: opacity 0.3s; /* Transición suave para cambios de opacidad */
+}
+
+/* === PROYECTOS === */
+.projects-container {
+    display: grid; /* Disposición en cuadrícula */
+    grid-template-columns: repeat(3, minmax(0, 250px)); /* 3 columnas de máximo 250px */
+    gap: 20px 10px; /* Espacio entre filas y columnas */
+    justify-content: center; /* Centra la cuadrícula horizontalmente */
+    margin: 0 auto; /* Centra el contenedor */
+    max-width: 800px; /* Ancho máximo del contenedor */
+    padding: 20px; /* Espaciado interno */
+    position: relative; /* Para z-index */
+    z-index: 5; /* Nivel de apilamiento */
+}
+
+.projects-container a {
+    text-align: center; /* Centra el contenido */
+    animation: floating 3s ease-in-out infinite; /* Animación de flotación */
+}
+
+.projects-container img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+    border: 2px solid #FFD700; /* Borde dorado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición suave para efectos hover */
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+}
+
+.projects-container img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Efecto de brillo */
+}
+
+/* Retrasos dinámicos para animaciones */
+.projects-container a:nth-child(1), .redes a:nth-child(1) { animation-delay: 0s; }
+.projects-container a:nth-child(2), .redes a:nth-child(2) { animation-delay: 0.5s; }
+.projects-container a:nth-child(3), .redes a:nth-child(3) { animation-delay: 1s; }
+.projects-container a:nth-child(4), .redes a:nth-child(4) { animation-delay: 1.5s; }
+.projects-container a:nth-child(5) { animation-delay: 2s; }
+.projects-container a:nth-child(6) { animation-delay: 2.5s; }
+

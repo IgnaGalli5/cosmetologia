@@ -1,0 +1,260 @@
+/* === CONFIGURACIÓN GLOBAL === */
+/* Configuración básica para el documento */
+body, html {
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina rellenos predeterminados */
+    height: 100%; /* Altura completa de la ventana */
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+/* Estilo general del cuerpo */
+body {
+    background-image: url(/imagen/space.jpg); /* Imagen de fondo */
+    background-size: cover; /* La imagen cubre toda la ventana */
+    color: white; /* Texto blanco */
+    font-family: Arial, sans-serif; /* Fuente principal */
+    font-size: 16px; /* Tamaño de fuente predeterminado */
+}
+
+/* === HEADER Y BANNER === */
+/* Estilo del encabezado */
+header {
+    position: relative; /* Posiciona elementos en relación al header */
+    top: 0; /* Alinea al borde superior */
+    left: 0; /* Alinea al borde izquierdo */
+    width: 100%; /* Ocupa todo el ancho */
+    z-index: 30; /* Encima de otros elementos */
+    margin-bottom: 50px; /* Espaciado debajo del header */
+}
+
+/* Contenedor del banner */
+#banner {
+    position: relative; /* Posiciona elementos en relación al banner */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 250px; /* Altura del banner */
+    overflow: hidden; /* Oculta contenido fuera del área del banner */
+}
+
+/* Imagen dentro del banner */
+#banner-image {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    height: auto; /* Mantiene proporciones */
+    position: absolute; /* Posiciona dentro del contenedor */
+    top: 0; /* Alinea al borde superior */
+    left: 0; /* Alinea al borde izquierdo */
+    transition: transform 1s ease; /* Transición suave en hover */
+}
+
+/* Efecto al pasar el ratón sobre el banner */
+#banner:hover #banner-image {
+    transform: translateY(-40%); /* Desplaza la imagen hacia arriba */
+}
+
+/* === MENÚ DE NAVEGACIÓN === */
+/* Contenedor del menú */
+nav {
+    position: absolute; /* Posiciona sobre el banner */
+    bottom: 0; /* Alinea al borde inferior */
+    left: 0; /* Alinea al borde izquierdo */
+    width: 100%; /* Ocupa todo el ancho */
+    background-image: url(/imagen/barra.jpeg); /* Fondo del menú */
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+    background-color: rgba(0, 0, 0, 0.7); /* Color semitransparente para el fondo */
+    padding: 10px 0; /* Espaciado interno */
+}
+
+/* Lista de enlaces del menú */
+nav ul {
+    list-style-type: none; /* Elimina viñetas */
+    padding: 0; /* Sin relleno */
+    margin: 0; /* Sin margen */
+    display: flex; /* Elementos en línea */
+    justify-content: center; /* Centra los enlaces */
+    flex-wrap: wrap; /* Permite dividirse en filas si es necesario */
+}
+
+/* Elementos de la lista */
+nav ul li {
+    margin: 5px; /* Espaciado entre los elementos */
+}
+
+/* Estilo de los enlaces */
+nav ul li a {
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1em; /* Tamaño de texto */
+    padding: 5px 10px; /* Espaciado interno */
+    font-weight: bold; /* Negrita */
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Transiciones */
+}
+
+/* Efecto hover en enlaces */
+nav ul li a:hover {
+    color: rgb(0, 183, 255); /* Cambia a amarillo */
+    text-shadow: 0 0 10px rgba(0, 255, 221, 0.8); /* Añade un brillo */
+}
+
+/* Estilo de enfoque para accesibilidad */
+nav ul li a:focus {
+    outline: 2px solid #FFD700; /* Borde resaltado */
+    text-shadow: 0 0 5px #FFD700; /* Sombra de texto */
+}
+
+/* === CONTENIDO PRINCIPAL === */
+/* Contenedor principal */
+#portfolio-content {
+    position: relative; /* Elementos internos posicionados en relación a este */
+    z-index: 10; /* Por encima del fondo */
+    padding: 170px 20px 20px; /* Espaciado interno */
+    min-height: calc(100vh - 170px); /* Altura mínima para ocupar la pantalla */
+    overflow-y: auto; /* Permite desplazamiento vertical */
+    margin-top: -150px; /* Ajuste para evitar solapamientos */
+}
+
+/* === EFECTOS Y ANIMACIONES === */
+/* Contenedor de los láseres */
+#laser-container {
+    position: fixed; /* Siempre visible */
+    top: 0; /* Alineado al borde superior */
+    left: 0; /* Alineado al borde izquierdo */
+    width: 100%; /* Cubre todo el ancho */
+    height: 100%; /* Cubre toda la altura */
+    pointer-events: none; /* No bloquea la interacción */
+    z-index: 20; /* Sobre otros elementos */
+}
+
+/* Estilo de los láseres */
+.laser {
+    animation: laserFade 1s ease-out forwards; /* Animación para desvanecer */
+    animation-delay: calc(var(--laser-index) * 0.2s); /* Retraso dinámico */
+}
+
+/* Animación de desvanecimiento */
+@keyframes laserFade {
+    0% { opacity: 1; } /* Comienza visible */
+    100% { opacity: 0; } /* Desaparece */
+}
+
+/* === ELEMENTOS ESPECIALES === */
+/* Contenedor de la nave */
+#starship-container {
+    position: fixed; /* Siempre visible en la pantalla */
+    bottom: -50px; /* Alineado al borde inferior */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste de centrado */
+    display: flex; /* Estructura flexible */
+    justify-content: center; /* Centra contenido interno */
+    align-items: flex-end; /* Alinea contenido al fondo */
+    z-index: 100; /* Sobre otros elementos */
+    animation: floating 3s ease-in-out infinite; /* Animación de flotación */
+    transition: left 0.3s ease-in-out; /* Transición para suavizar movimiento */
+}
+
+/* Contenido interno de la nave */
+#starship-interior {
+    max-width: 50%; /* Limita el ancho máximo */
+    height: auto; /* Mantiene proporciones */
+    object-fit: contain; /* Ajuste sin distorsión */
+}
+
+/* Animación de flotación */
+@keyframes floating {
+    0% {
+        transform: translateY(0px); /* Posición inicial */
+    }
+    50% {
+        transform: translateY(-10px); /* Punto más alto */
+    }
+    100% {
+        transform: translateY(0px); /* Regresa a la posición inicial */
+    }
+}
+
+/* Retrasos dinámicos para elementos flotantes */
+#starship-container:nth-child(1) { animation-delay: 0s; }
+#starship-container:nth-child(2) { animation-delay: 0.5s; }
+#starship-container:nth-child(3) { animation-delay: 1s; }
+#starship-container:nth-child(4) { animation-delay: 1.5s; }
+#starship-container:nth-child(5) { animation-delay: 2s; }
+#starship-container:nth-child(6) { animation-delay: 2.5s; }
+
+
+/* === REDES SOCIALES === */
+/* Contenedor de iconos */
+.redes {
+    display: flex; /* Elementos en línea */
+    justify-content: center; /* Centra los iconos */
+    align-items: center; /* Alinea verticalmente */
+    width: 100%; /* Ocupa todo el ancho */
+    margin-bottom: 50px; /* Espaciado debajo */
+}
+
+/* Estilo de los enlaces */
+.redes a {
+    display: inline-block; /* Los iconos se comportan como bloques en línea */
+    margin: 0 20px; /* Espaciado entre los iconos */
+    animation: floating 3s ease-in-out infinite; /* Animación de flotación */
+    position: relative; /* Permite posicionamiento relativo */
+    text-align: center; /* Centra el contenido interno */
+}
+
+/* Estilo de las imágenes */
+.redes img {
+    height: 50px; /* Altura de los iconos */
+    width: 50px; /* Ancho de los iconos */
+    pointer-events: auto; /* Permite interacción */
+    transition: opacity 0.3s ease; /* Transición suave para opacidad */
+}
+
+/* Retrasos dinámicos para cada icono */
+.redes a:nth-child(1) { animation-delay: 0s; }
+.redes a:nth-child(2) { animation-delay: 0.5s; }
+.redes a:nth-child(3) { animation-delay: 1s; }
+.redes a:nth-child(4) { animation-delay: 1.5s; }
+
+/* === PROYECTOS === */
+/* Contenedor de proyectos */
+.projects-container {
+    display: flex; /* Elementos en línea */
+    flex-wrap: wrap; /* Permite dividirse en filas */
+    justify-content: center; /* Centra proyectos */
+    gap: 20px; /* Espaciado entre proyectos */
+    padding: 20px; /* Espaciado interno */
+    position: relative; /* Asegura posicionamiento interno */
+    z-index: 5; /* Menor prioridad que los láseres */
+}
+
+/* Elementos del contenedor */
+.projects-container a {
+    flex: 1 1 min(30%, 150px); /* Ajuste dinámico */
+    max-width: 180px; /* Limita el ancho máximo */
+    text-align: center; /* Centra contenido interno */
+    animation: floating 3s ease-in-out infinite; /* Animación de flotación */
+}
+
+/* Imágenes dentro de los proyectos */
+.projects-container img {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    height: auto; /* Mantiene proporciones */
+    display: block; /* Se comporta como un bloque */
+    border: 2px solid #FFD700; /* Borde amarillo */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de transición */
+    object-fit: cover; /* Ajusta sin distorsión */
+}
+
+/* Efecto hover en imágenes */
+.projects-container img:hover {
+    transform: scale(1.05); /* Aumenta el tamaño */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Añade un brillo */
+}
+
+/* Retrasos dinámicos para animaciones de proyectos */
+/* Agregamos diferentes delays para cada imagen de proyecto para que no floten todos al mismo tiempo */
+.projects-container a:nth-child(1) { animation-delay: 0s; }
+.projects-container a:nth-child(2) { animation-delay: 0.5s; }
+.projects-container a:nth-child(3) { animation-delay: 1s; }
+.projects-container a:nth-child(4) { animation-delay: 1.5s; }
+.projects-container a:nth-child(5) { animation-delay: 2s; }
+.projects-container a:nth-child(6) { animation-delay: 2.5s; }
+
