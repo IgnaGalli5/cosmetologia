@@ -87,54 +87,69 @@ body, html {
     align-items: center;
     
 }
-
+/* Estilos base para el contenedor de GIFs */
 .location .gif-container {
     position: relative;
-    width: 60px;  /* Ancho del GIF más grande */
-    height: 80px; /* Alto del GIF original */
+    width: 52px;  /* Ancho del contenedor, ajustado al GIF más grande */
+    height: 71px; /* Alto del contenedor, mantiene la altura original */
     margin: 0 auto;
 }
 
+/* Estilos comunes para ambos GIFs (original y hover) */
 .location .original-gif,
 .location .hover-gif {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease;
+    transform: translate(-50%, -50%); /* Centra el GIF en el contenedor */
+    transition: opacity 0.3s ease; /* Suaviza la transición entre GIFs */
     max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
 }
 
+/* El GIF original es visible por defecto */
 .location .original-gif {
     opacity: 1;
 }
 
+/* El GIF de hover está oculto por defecto */
 .location .hover-gif {
     opacity: 0;
 }
 
+/* Al hacer hover, oculta el GIF original */
 .location:hover .original-gif {
     opacity: 0;
 }
 
+/* Al hacer hover, muestra el GIF de hover */
 .location:hover .hover-gif {
     opacity: 1;
 }
 
-/* Estilos específicos para cada GIF hover */
+/* Estilos específicos para el GIF de hover de "projects" (nachoj) */
 #projects .hover-gif {
-    transform: translate(-50%, -50%) scale(1.2);
+    /* Ajustamos la posición y el tamaño del GIF nachoj */
+    transform: translate(-70%, -50%) scale(0.95);
+    /* 
+    - translate(-52%, -50%): Mueve el GIF ligeramente hacia la izquierda
+    - scale(1.1): Reduce ligeramente el tamaño del GIF
+    Puedes ajustar estos valores según sea necesario
+    */
 }
 
+/* Estilos para el GIF de hover de "studies" (nachos) */
 #studies .hover-gif {
     transform: translate(-50%, -50%) scale(0.95);
+    /* Mantiene la posición central y reduce ligeramente el tamaño */
 }
 
+/* Estilos para el GIF de hover de "about" (nachoh) */
 #about .hover-gif {
     transform: translate(-50%, -50%) scale(1.1);
+    /* Mantiene la posición central y aumenta ligeramente el tamaño */
 }
 
 .location {
@@ -148,7 +163,7 @@ body, html {
     margin: 0 auto; /* Centra la imagen horizontalmente */
     max-width: 150%; /* Asegura que la imagen no desborde */
     cursor: pointer; /* Cambia el cursor para indicar un vínculo */
-    width: 45px;
+    width: 40px;
 }
 
 .location a {
