@@ -97,8 +97,9 @@ body, html {
 .location img {
     display: block; /* Hace que la imagen sea un bloque */
     margin: 0 auto; /* Centra la imagen horizontalmente */
-    max-width: 100%; /* Asegura que la imagen no desborde */
+    max-width: 150%; /* Asegura que la imagen no desborde */
     cursor: pointer; /* Cambia el cursor para indicar un vínculo */
+    width: 60px;
 }
 
 .location a {
