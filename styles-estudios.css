@@ -1,0 +1,309 @@
+/* Estilos globales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cinzel', serif;
+    color: #f0e6d2;
+    background-color: #000;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/* Efecto de torre de Isengard */
+.isengard-tower {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.tower-wall {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-image: url('https://i.imgur.com/ZTJtlHp.jpg');
+    background-size: cover;
+    transform-origin: center;
+}
+
+.tower-wall.left {
+    left: 0;
+    transform: rotateY(5deg);
+}
+
+.tower-wall.right {
+    right: 0;
+    transform: rotateY(-5deg);
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    box-shadow: 0 0 50px rgba(196, 189, 146, 0.507);
+}
+
+/* Estilos del encabezado */
+header {
+    position: relative;
+    width: 100%;
+}
+
+#banner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+nav {
+    background-color: rgba(44, 44, 44, 0.8);
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffd700;
+}
+
+/* Estilos del contenido principal */
+h2 {
+    color: #ffd700;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.introduccion {
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Estilos de la sección de estudios */
+.studies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.study-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.study-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+.study-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+}
+
+.study-item h3 {
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+/* Estilos del anillo */
+#ring-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#one-ring {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+#one-ring:hover {
+    transform: rotate(360deg);
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: rgba(44, 44, 44, 0.8);
+    color: #f0e6d2;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+.redes {
+    margin-bottom: 20px;
+}
+
+.redes a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.logos {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s, filter 0.3s;
+    filter: brightness(0) invert(1);
+}
+
+.logos:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px #ffd700);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .tower-wall {
+        width: 100%;
+        height: 50%;
+    }
+
+    .tower-wall.left {
+        top: 0;
+        transform: rotateX(5deg);
+    }
+
+    .tower-wall.right {
+        bottom: 0;
+        transform: rotateX(-5deg);
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+.lava-footer {
+    position: relative;
+    background-color: #1a0500;
+    color: #f0e6d2;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.lava-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.lava-flow {
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #ff4500;
+    animation: lavaFlow 20s infinite linear;
+    opacity: 0.7;
+}
+
+.lava-flow:nth-child(2) {
+    animation-delay: -5s;
+    opacity: 0.5;
+}
+
+.lava-flow:nth-child(3) {
+    animation-delay: -10s;
+    opacity: 0.3;
+}
+
+@keyframes lavaFlow {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-25%, -25%) rotate(360deg);
+    }
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+.redes {
+    margin-bottom: 20px;
+}
+
+.redes a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.logos {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s, filter 0.3s;
+    filter: brightness(0) invert(1);
+}
+
+.logos:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px #ffd700);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .lava-footer {
+        padding: 30px 0;
+    }
+}
