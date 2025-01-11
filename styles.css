@@ -96,6 +96,8 @@ nav ul li a:hover, nav ul li a:focus {
   margin-top: -150px; /* Ajusta la posición */
 }
 
+
+
 /* Contenedor para el efecto de láser */
 #laser-container {
   position: fixed; /* Fijo en pantalla */
@@ -125,7 +127,7 @@ nav ul li a:hover, nav ul li a:focus {
 /* Contenedor de la nave espacial */
 #starship-container {
   position: fixed; /* Fijo en la pantalla */
-  bottom: -35px; /* Posición inferior */
+  bottom: -45px; /* Posición inferior */
   left: 43%; /* Centrado horizontal */
   transform: translateX(-50%); /* Ajuste adicional */
   display: flex; /* Diseño en línea */
