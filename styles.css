@@ -169,6 +169,67 @@ nav ul li a:hover, nav ul li a:focus {
   animation: floating 3s ease-in-out infinite; /* Animación de flotación */
 }
 
+/* Texto */
+
+#inicio {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: hologramInterference 2s infinite;
+  
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  font-family: 'Star Wars', sans-serif; /* Fuente personalizada */
+}
+
+#inicio:hover {
+  animation: none; /* Detiene la animación para leer mejor */
+}
+
+#inicio h2 {
+  font-size: 3rem;
+ 
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px #ffe81f, 0 0 30px #ffe81f;
+  color: #ffe81f; /* Amarillo típico de Star Wars */
+}
+
+.introduccion, .datos {
+  max-width: 1000px;
+  line-height: 1.8;
+  font-size: 1rem;
+  text-align: justify;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(117, 199, 253, 0.884), 0 0 30px rgba(34, 20, 219, 0.5);
+  color: #ffffff;
+  filter: blur(0.5px);
+
+}
+
+
+
+.datos {
+  margin-top: 20px;
+}
+
+.est {
+  color: #ffe81f;
+  text-decoration: none;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.est:hover {
+  text-shadow: 0 0 10px #ffffff;
+  text-decoration: underline;
+}
+
+
 /* Imágenes de los proyectos */
 .projects-container img {
   width: 100%; /* Escala completa */
