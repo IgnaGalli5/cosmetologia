@@ -96,8 +96,6 @@ nav ul li a:hover, nav ul li a:focus {
   margin-top: -150px; /* Ajusta la posición */
 }
 
-
-
 /* Contenedor para el efecto de láser */
 #laser-container {
   position: fixed; /* Fijo en pantalla */
@@ -169,8 +167,7 @@ nav ul li a:hover, nav ul li a:focus {
   animation: floating 3s ease-in-out infinite; /* Animación de flotación */
 }
 
-/* Texto */
-
+/* Estilos para la sección de inicio */
 #inicio {
   text-align: center;
   height: 100vh;
@@ -179,25 +176,38 @@ nav ul li a:hover, nav ul li a:focus {
   justify-content: center;
   align-items: center;
   position: relative;
-  animation: hologramInterference 2s infinite;
-  
   cursor: pointer; /* Cambia el cursor al pasar por encima */
   font-family: 'Star Wars', sans-serif; /* Fuente personalizada */
 }
 
-#inicio:hover {
-  animation: none; /* Detiene la animación para leer mejor */
+/* Estilos para los encabezados h2 */
+h2 {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px #ffe81f, 0 0 30px #ffe81f;
+  color: #ffe81f; /* Amarillo típico de Star Wars */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  font-family: 'Star Wars', sans-serif; /* Fuente personalizada */
 }
 
+/* Estilos específicos para h2 dentro de #inicio */
 #inicio h2 {
   font-size: 3rem;
- 
   letter-spacing: 3px;
   margin-bottom: 20px;
   text-shadow: 0 0 20px #ffe81f, 0 0 30px #ffe81f;
   color: #ffe81f; /* Amarillo típico de Star Wars */
 }
 
+/* Estilos para las secciones de introducción y datos */
 .introduccion, .datos {
   max-width: 1000px;
   line-height: 1.8;
@@ -209,26 +219,7 @@ nav ul li a:hover, nav ul li a:focus {
   box-shadow: 0 0 20px rgba(117, 199, 253, 0.884), 0 0 30px rgba(34, 20, 219, 0.5);
   color: #ffffff;
   filter: blur(0.5px);
-
 }
-
-
-
-.datos {
-  margin-top: 20px;
-}
-
-.est {
-  color: #ffe81f;
-  text-decoration: none;
-  transition: text-shadow 0.3s ease-in-out;
-}
-
-.est:hover {
-  text-shadow: 0 0 10px #ffffff;
-  text-decoration: underline;
-}
-
 
 /* Imágenes de los proyectos */
 .projects-container img {
@@ -307,7 +298,7 @@ nav ul li a:hover, nav ul li a:focus {
 
 /* Retrasos en las animaciones para proyectos e iconos */
 .projects-container a:nth-child(1), .redes a:nth-child(1) { animation-delay: 0s; }
-.projects-container a:nth-child(2), .redes a:nth-child(2) { animation-delay: 0.5s}
+.projects-container a:nth-child(2), .redes a:nth-child(2) { animation-delay: 0.5s; }
 .projects-container a:nth-child(3), .redes a:nth-child(3) { animation-delay: 1s; }
 .projects-container a:nth-child(4) { animation-delay: 1.5s; }
 .projects-container a:nth-child(5) { animation-delay: 2s; }
