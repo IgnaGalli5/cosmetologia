@@ -26,7 +26,7 @@ header {
   position: relative; /* Posición relativa para ajustar elementos internos */
   width: 100%; /* Ancho completo */
   z-index: 30; /* Capa sobre otros elementos */
-  margin-bottom: 50px; /* Separación inferior */
+  /*margin-bottom: 50px; /* Separación inferior */
 }
 
 /* Contenedor del banner */
@@ -90,11 +90,12 @@ nav ul li a:hover, nav ul li a:focus {
 #portfolio-content {
   position: relative; /* Posición relativa */
   z-index: 10; /* Capa sobre el fondo */
-  padding: 170px 20px 20px; /* Espaciado interno */
-  min-height: calc(100vh - 170px); /* Altura mínima ajustada */
   overflow-y: auto; /* Permite desplazamiento vertical */
-  margin-top: -150px; /* Ajusta la posición */
+  padding: 20px 20px 20px; /* Cambia de 170px a 20px en la parte superior */
+  min-height: calc(100vh - 20px); /* Ajusta la altura mínima */
+  margin-top: 0; /* Elimina el margen negativo */
 }
+
 
 /* Contenedor para el efecto de láser */
 #laser-container {
@@ -152,13 +153,16 @@ nav ul li a:hover, nav ul li a:focus {
 .projects-container {
   display: grid; /* Diseño en cuadrícula */
   grid-template-columns: repeat(auto-fit, minmax(200px, 250px)); /* Ajuste dinámico de columnas */
-  gap: 40px 30px; /* Espaciado entre las columnas y filas */
+ 
   justify-content: center; /* Centrado horizontal */
   margin: 0 auto; /* Centrado en el contenedor */
   max-width: 1200px; /* Ancho máximo */
-  padding: 20px; /* Espaciado interno */
+
   position: relative;
   z-index: 5; /* Sobre el fondo */
+
+  gap: 20px; /* Reduce de 40px 30px a 20px */
+  padding: 10px; /* Reduce de 20px a 10px */
 }
 
 /* Enlaces dentro del contenedor de proyectos */
@@ -170,7 +174,7 @@ nav ul li a:hover, nav ul li a:focus {
 /* Estilos para la sección de inicio */
 #inicio {
   text-align: center;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -183,7 +187,7 @@ nav ul li a:hover, nav ul li a:focus {
 /* Estilos para los encabezados h2 */
 h2 {
   text-align: center;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -191,7 +195,7 @@ h2 {
   position: relative;
   font-size: 3rem;
   letter-spacing: 3px;
-  margin-bottom: 20px;
+ margin-bottom: -50px;
   text-shadow: 0 0 20px #ffe81f, 0 0 30px #ffe81f;
   color: #ffe81f; /* Amarillo típico de Star Wars */
   cursor: pointer; /* Cambia el cursor al pasar por encima */
@@ -230,6 +234,11 @@ h2 {
   border-radius: 5px; /* Bordes redondeados */
   transition: transform 0.3s, box-shadow 0.3s; /* Animaciones de transformación y sombra */
   object-fit: cover; /* Ajuste sin deformación */
+  margin-bottom: 25px;
+}
+
+#proyectos{
+  margin-bottom: 150px;
 }
 
 /* Efecto al pasar el mouse por la imagen */
@@ -240,6 +249,7 @@ h2 {
 
 /* Iconos de redes sociales */
 .redes {
+  
   display: flex; /* Diseño en línea */
   justify-content: center; /* Centrado */
   align-items: center; /* Alineado al centro */
