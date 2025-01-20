@@ -283,6 +283,15 @@ h2 {
   transform: translate(-50%, -50%);
 }
 
+.spell-image {
+    width: 100px; /* Ajusta el tamaño de las imágenes */
+    height: auto; /* Mantén las proporciones */
+    pointer-events: none; /* Evita que interfiera con el clic */
+    position: relative; /* Para posicionar según el contenedor */
+    z-index: 10000; /* Asegura que las imágenes estén en primer plano */
+  }
+
+
 /* Efecto de hechizo */
 #spell-effect {
   position: fixed;
