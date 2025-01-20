@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             e.preventDefault(); // Previene la acción predeterminada del enlace
 
             const spellText = document.createElement("div"); // Crea el texto del hechizo
-            spellText.innerHTML = "<img src='imagen/avadakedavra.png' alt='Avada Kedavra' class='spell-image'>"; // Imagen del hechizo
+            spellText.innerHTML = "<img src='imagen/avada-kadabra.png' alt='Avada Kedavra' class='spell-image'>"; // Imagen del hechizo
             spellText.style.position = "fixed"; // Posición fija en la pantalla
             spellText.style.top = `${e.clientY}px`;
             spellText.style.left = `${e.clientX}px`;
