@@ -1,109 +1,106 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"> <!-- Define el idioma del documento como español -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudios de Programación</title>
-    <link rel="stylesheet" href="styles-estudios.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8"> <!-- Especifica la codificación de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsiva -->
+    <title>Estudios de Programación - Hogwarts Edition</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="styles-estudios.css"> <!-- Vincula el archivo CSS externo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet"> <!-- Importa la fuente Cinzel desde Google Fonts -->
 </head>
 <body>
-    <div class="isengard-tower">
-        <div class="tower-wall left"></div>
-        <div class="tower-wall right"></div>
-        <div class="content-wrapper">
-            <header>
-                <div id="banner">
-                    <img src="/imagen/rivendell.jpg" alt="Banner del Señor de los Anillos" id="banner-image">
+    <div class="hogwarts-castle"> <!-- Contenedor principal para el diseño estilo castillo -->
+        <div class="castle-wall left"></div> <!-- Representa la pared izquierda del castillo -->
+        <div class="castle-wall right"></div> <!-- Representa la pared derecha del castillo -->
+        <div class="content-wrapper"> <!-- Contenedor que centraliza el contenido principal -->
+            <header> <!-- Encabezado de la página -->
+                <div id="banner"> <!-- Contenedor del banner -->
+                    <img src="/imagen/hogwarts.jpg" alt="Banner de Hogwarts" id="banner-image"> <!-- Imagen del banner con descripción alternativa -->
                 </div>
-                <nav>
-                    <ul>
-                        <li><a href="map.html"><span>Inicio</span></a></li>
-                        <li><a href="inicio.html"><span>Proyectos</span></a></li>
-                        <li><a href="estudios.html"><span>Estudios</span></a></li>
-                        <li><a href="index3.html"><span>Sobre Mí</span></a></li>
+                <nav> <!-- Barra de navegación -->
+                    <ul> <!-- Lista de enlaces de navegación -->
+                        <li><a href="index.html"><span>Inicio</span></a></li> <!-- Enlace a la página de inicio -->
+                        <li><a href="proyectos.html"><span>Proyectos</span></a></li> <!-- Enlace a la página de proyectos -->
+                        <li><a href="estudios.html"><span>Estudios</span></a></li> <!-- Enlace a la página de estudios -->
+                        <li><a href="sobre-mi.html"><span>Sobre Mí</span></a></li> <!-- Enlace a la página de información personal -->
                     </ul>
                 </nav>
             </header>
 
-            <div id="portfolio-content">
-                <section id="introduccion">
-                    <h2>Mi Viaje en la Programación</h2>
-                    <p class="introduccion">
-                        Bienvenidos a mi registro de estudios. Como Saruman en su torre de Isengard, 
-                        he acumulado conocimiento y poder en el mundo de la programación. Cada lenguaje 
-                        y tecnología que he dominado es como un nuevo hechizo en mi grimorio digital.
+            <div id="portfolio-content"> <!-- Contenedor principal del contenido -->
+                <section id="introduccion"> <!-- Sección introductoria -->
+                    <h2>Mi Viaje en la Programación</h2> <!-- Título principal de la sección -->
+                    <p class="introduccion"> <!-- Párrafo introductorio -->
+                        Bienvenidos a mi registro de estudios. Como un estudiante de Hogwarts, 
+                        he acumulado conocimiento y habilidades en el mundo de la programación. 
+                        Cada lenguaje y tecnología que he dominado es como un nuevo hechizo en mi libro de conjuros digital.
                     </p>
                 </section>
 
-                <section id="estudios">
-                    <h2>Mis Estudios</h2>
-                    <div class="studies-container">
-                        <div class="study-item">
-                            <img src="imagen/c-sharp.png" alt="C#">
-                            <h3>C#</h3>
-                            <p>El lenguaje de los Istari, poderoso y versátil.</p>
+                <section id="estudios"> <!-- Sección de estudios -->
+                    <h2>Mis Estudios</h2> <!-- Título de la sección -->
+                    <div class="studies-container"> <!-- Contenedor para organizar los elementos de estudio -->
+                        <!-- Cada div representa un lenguaje de programación -->
+                        <div class="study-item" data-spell="Revelio"> 
+                            <img src="imagen/c-sharp.png" alt="C#"> <!-- Icono del lenguaje C# -->
+                            <h3>C#</h3> <!-- Nombre del lenguaje -->
+                            <p>El lenguaje de los magos avanzados, poderoso y versátil.</p> <!-- Descripción del lenguaje -->
                         </div>
-                        <div class="study-item">
-                            <img src="imagen/python.png" alt="Python">
-                            <h3>Python</h3>
-                            <p>Ágil como un elfo, capaz de realizar tareas complejas con elegancia.</p>
+                        <div class="study-item" data-spell="Revelio">
+                            <img src="imagen/python.png" alt="Python"> <!-- Icono de Python -->
+                            <h3>Python</h3> <!-- Nombre del lenguaje -->
+                            <p>Ágil como un hipogrifo, capaz de realizar tareas complejas con elegancia.</p> <!-- Descripción -->
                         </div>
-                        <div class="study-item">
-                            <img src="imagen/sql.png" alt="SQL">
+                        <div class="study-item" data-spell="Revelio">
+                            <img src="imagen/sql.png" alt="SQL"> <!-- Icono de SQL -->
                             <h3>SQL</h3>
-                            <p>El lenguaje de las bases de datos, tan vasto como los archivos de Minas Tirith.</p>
+                            <p>El lenguaje de las bases de datos, tan vasto como la biblioteca de Hogwarts.</p>
                         </div>
-                        <div class="study-item">
-                            <img src="imagen/html-css.png" alt="HTML y CSS">
+                        <div class="study-item" data-spell="Revelio">
+                            <img src="imagen/html-css.png" alt="HTML y CSS"> <!-- Icono de HTML y CSS -->
                             <h3>HTML y CSS</h3>
-                            <p>Los cimientos de la web, tan fundamentales como la piedra de Orthanc.</p>
+                            <p>Los cimientos de la web, tan fundamentales como los hechizos básicos.</p>
                         </div>
-                        <div class="study-item">
-                            <img src="imagen/javascript.png" alt="JavaScript">
+                        <div class="study-item" data-spell="Revelio">
+                            <img src="imagen/javascript.png" alt="JavaScript"> <!-- Icono de JavaScript -->
                             <h3>JavaScript</h3>
-                            <p>Dinámico y poderoso, como la magia de Saruman el Blanco.</p>
+                            <p>Dinámico y poderoso, como la magia de Dumbledore.</p>
                         </div>
-                        <div class="study-item">
-                            <img src="imagen/react.png" alt="React">
+                        <div class="study-item" data-spell="Revelio">
+                            <img src="imagen/react.png" alt="React"> <!-- Icono de React -->
                             <h3>React</h3>
-                            <p>Una herramienta moderna, forjada con el poder de los anillos de poder.</p>
+                            <p>Una herramienta moderna, forjada con el poder de la magia avanzada.</p>
                         </div>
                     </div>
                 </section>
             </div>
 
-            <footer class="lava-footer">
-                <div class="lava-container">
-                    <div class="lava-flow"></div>
-                    <div class="lava-flow"></div>
-                    <div class="lava-flow"></div>
+            <footer class="magic-footer"> <!-- Pie de página con un diseño mágico -->
+                <div class="magic-container"> <!-- Contenedor para efectos mágicos -->
+                    <div class="magic-sparkle"></div> <!-- Chispa mágica 1 -->
+                    <div class="magic-sparkle"></div> <!-- Chispa mágica 2 -->
+                    <div class="magic-sparkle"></div> <!-- Chispa mágica 3 -->
                 </div>
-                <div class="footer-content">
-                    <div class="redes">
-                        <a href="https://github.com/IgnaGalli5" target="_blank">
-                            <img class="logos" src="logos/github.png" alt="github">
+                <div class="footer-content"> <!-- Contenido del pie de página -->
+                    <div class="redes"> <!-- Enlaces a redes sociales -->
+                        <a href="https://github.com/IgnaGalli5" target="_blank" data-spell="Avada Kedavra"> <!-- Enlace a GitHub -->
+                            <img class="logos" src="logos/github.png" alt="github"> <!-- Icono de GitHub -->
                         </a>
-                        <a href="https://www.instagram.com/gallosueltoo/" target="_blank">
-                            <img class="logos" src="logos/instagram.png" alt="instagram">
+                        <a href="https://www.instagram.com/gallosueltoo/" target="_blank" data-spell="Avada Kedavra"> <!-- Enlace a Instagram -->
+                            <img class="logos" src="logos/instagram.png" alt="instagram"> <!-- Icono de Instagram -->
                         </a>
-                        <a href="https://www.linkedin.com/in/ignacio-galli-soler-18b180208/" target="_blank">
-                            <img class="logos" src="/logos/linkedin.png" alt="linkedin">
+                        <a href="https://www.linkedin.com/in/ignacio-galli-soler-18b180208/" target="_blank" data-spell="Avada Kedavra"> <!-- Enlace a LinkedIn -->
+                            <img class="logos" src="/logos/linkedin.png" alt="linkedin"> <!-- Icono de LinkedIn -->
                         </a>
                     </div>
-                    <p>Todos los derechos reservados - En la lengua de Mordor, donde las sombras yacen</p>
+                    <p>Todos los derechos reservados - Hecho con magia en Hogwarts</p> <!-- Texto del pie de página -->
                 </div>
             </footer>
-            
-
         </div>
     </div>
 
-    <div id="ring-container">
-        <img id="one-ring" src="/imagen/one-ring.png" alt="El Anillo Único">
-    </div>
+    <div id="wand-cursor"></div> <!-- Div para el cursor personalizado -->
+    <div id="spell-effect"></div> <!-- Div para el efecto de hechizo -->
 
-    <script src="script-estudios.js"></script>
+    <script src="script-estudios.js"></script> <!-- Vincula el archivo JavaScript externo -->
 </body>
 </html>
-
