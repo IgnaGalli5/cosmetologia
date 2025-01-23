@@ -3,20 +3,64 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: "Cinzel", serif;
-  color: #d1d1d1;
-  background-color: #121212;
+  font-family: "Cinzel", serif; /* Usa la fuente Cinzel para todo el texto */
+  color: #d1d1d1; /* Color de texto principal */
+  background-color: #121212; /* Color de fondo oscuro */
   overflow-x: hidden;
   height: 100%;
-  cursor: none;
+  cursor: none; /* Oculta el cursor predeterminado */
 }
+
+/* Botones de selección de casa */
+.houses-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px;
+}
+
+.house-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 50px;
+  width: 100px; /* Tamaño uniforme del botón */
+  height: 100px;
+  overflow: hidden; /* Asegura que las imágenes no sobresalgan */
+  border-radius: 10px; /* Bordes redondeados opcionales */
+  transition: transform 0.3s ease;
+}
+
+.house-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Rellena el botón manteniendo proporciones */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.house-button:hover img {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+}
+
+/* Ajuste de posición para las imágenes de hechizos */
+#spell-effect {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s;
+  top: 0;
+}
+
+
 
 /* Efecto de castillo de Hogwarts */
 .hogwarts-castle {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  perspective: 1000px;
+  perspective: 1000px; /* Crea un efecto 3D */
 }
 
 .castle-wall {
@@ -29,24 +73,46 @@ html {
   transform-origin: center;
 }
 
+.house{
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  transform: scale(0.9);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.house img {
+
+  height: 80px;
+  width: 80px;
+
+
+}
+
 .castle-wall.left {
   left: 0;
-  transform: rotateY(5deg);
+  transform: rotateY(5deg); /* Rota la pared izquierda */
 }
 
 .castle-wall.right {
   right: 0;
-  transform: rotateY(-5deg);
+  transform: rotateY(-5deg); /* Rota la pared derecha */
 }
 
 .content-wrapper {
   position: relative;
   z-index: 1;
-  background: rgba(18, 18, 18, 0.7);
+  background: rgba(18, 18, 18, 0.7); /* Fondo semi-transparente */
   margin: 0 auto;
   max-width: 1200px;
   padding: 20px;
-  box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.3); /* Sombra dorada */
 }
 
 /* Estilos del encabezado */
@@ -71,7 +137,7 @@ header {
 }
 
 nav {
-  background-color: rgba(14, 26, 64, 0.8);
+  background-color: rgba(14, 26, 64, 0.8); /* Fondo semi-transparente para la navegación */
   padding: 10px 0;
   border-radius: 5px;
 }
@@ -88,7 +154,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #ffd700;
+  color: #ffd700; /* Color dorado para los enlaces */
   text-decoration: none;
   font-size: 1.2em;
   transition: color 0.3s;
@@ -96,8 +162,11 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #ffffff;
-  text-shadow: 0 0 10px #ffd700;
+  text-shadow: 0 0 10px #ffd700; /* Efecto de brillo al pasar el mouse */
 }
+
+
+
 
 /* Estilos del contenido principal */
 h2 {
@@ -105,7 +174,7 @@ h2 {
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 30px;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Efecto de brillo para los títulos */
 }
 
 .introduccion {
@@ -118,7 +187,7 @@ h2 {
 /* Estilos de la sección de estudios */
 .studies-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Diseño de cuadrícula responsiva */
   gap: 30px;
 }
 
@@ -181,7 +250,7 @@ h2 {
   height: 100px;
   object-fit: contain;
   margin-bottom: 15px;
-  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5)); /* Sombra dorada para los iconos */
 }
 
 .study-item h3 {
@@ -202,40 +271,40 @@ h2 {
 
 .magic-container {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
+  pointer-events: none;
 }
 
 .magic-sparkle {
   position: absolute;
-  bottom: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0) 70%);
-  animation: magicSparkle 10s infinite linear;
-  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0) 60%);
+  animation: magicSparkle 5s infinite;
+  opacity: 0;
 }
 
 .magic-sparkle:nth-child(2) {
-  animation-delay: -3s;
-  opacity: 0.5;
+  animation-delay: -1.67s;
 }
 
 .magic-sparkle:nth-child(3) {
-  animation-delay: -6s;
-  opacity: 0.3;
+  animation-delay: -3.33s;
 }
 
 @keyframes magicSparkle {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
+  0%,
   100% {
-    transform: translate(-25%, -25%) rotate(360deg);
+    opacity: 0;
+    transform: scale(0.5) translate(-50%, -50%);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) translate(-50%, -50%);
   }
 }
 
@@ -256,20 +325,17 @@ h2 {
 .logos {
   width: 30px;
   height: 30px;
-  transition: transform 0.3s, filter 0.3s, opacity 0.5s;
-  filter: brightness(0) invert(1);
+  transition: filter 0.3s, opacity 0.5s;
   opacity: 1;
 }
 
-.logos.hidden {
-  opacity: 0;
+.logos.bw {
+  filter: grayscale(100%) brightness(0) invert(1);
 }
 
 .logos:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0 0 5px #ffd700);
 }
-
 /* Cursor personalizado */
 #wand-cursor {
   position: fixed;
@@ -279,24 +345,23 @@ h2 {
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
-  z-index: 10001; /* Update: Increased z-index for higher priority */
+  z-index: 10001; /* Prioridad alta para que aparezca sobre otros elementos */
   transform: translate(-50%, -50%);
 }
 
 .spell-image {
-    width: 100px; /* Ajusta el tamaño de las imágenes */
-    height: auto; /* Mantén las proporciones */
-    pointer-events: none; /* Evita que interfiera con el clic */
-    position: relative; /* Para posicionar según el contenedor */
-    z-index: 10000; /* Asegura que las imágenes estén en primer plano */
-  }
-
+  width: 100px;
+  height: auto;
+  pointer-events: none;
+  position: relative;
+  z-index: 10000;
+}
 
 /* Efecto de hechizo */
 #spell-effect {
   position: fixed;
   pointer-events: none;
-  z-index: 10000; /* Update: Adjusted z-index */
+  z-index: 10000;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -305,10 +370,10 @@ a,
 button,
 [role="button"],
 .study-item {
-  /* Update: Removed hand cursor from links and buttons */
-  cursor: none !important;
+  cursor: none !important; /* Asegura que el cursor personalizado se use en estos elementos */
 }
 
+/* Ajustes responsivos */
 /* Ajustes responsivos */
 @media (max-width: 768px) {
   .castle-wall {
@@ -354,4 +419,3 @@ button,
 .destroying {
   animation: destroy 0.5s forwards;
 }
-
