@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function changeHouseTheme(house) {
       const themes = {
         gryffindor: {
-          color: "#7F0909",
+          color: "#1c0b0b",
           background: "url('/imagen/casas/head-gry.jpg')",
           banner: "/imagen/casas/head-gry.jpg",
           navColor: "#9E1A1A",
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
           rightFlag: "imagen/casas/banner-gryffi.png",
         },
         hufflepuff: {
-          color: "#EEE117",
+          color: "#5c5932",
           background: "url('/imagen/casas/head-uff.jpg')",
           banner: "/imagen/casas/head-uff.jpg",
           navColor: "#E0C340",
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
           rightFlag: "imagen/casas/banner-uff.png",
         },
         ravenclaw: {
-          color: "#000A90",
+          color: "#0a0d3d",
           background: "url('imagen/casas/banner-rav.png')",
           banner: "/imagen/casas/head-rave.jpg",
           navColor: "#273B81",
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
           rightFlag: "imagen/casas/banner-rav.png",
         },
         slytherin: {
-          color: "#2A623D",
+          color: "#15261b",
           background: "url('imagen/casas/banner-sly.png')",
           banner: "/imagen/casas/head-sly.jpg",
           navColor: "#347D39",
@@ -125,6 +125,26 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("right-banner").style.backgroundImage = `url('${theme.rightFlag}')`
       }
     }
+
+    document.querySelectorAll(".redes a").forEach(link => {
+      link.addEventListener("click", event => {
+        event.preventDefault(); // Evita que el enlace se abra inmediatamente
+        const targetUrl = event.currentTarget.href;
+    
+        // Aplicar efecto "Avada Kedavra"
+        const spellEffect = document.getElementById("spell-effect");
+        spellEffect.style.left = `${event.clientX}px`;
+        spellEffect.style.top = `${event.clientY - 50}px`;
+        spellEffect.style.opacity = "1";
+        spellEffect.innerHTML = `<img src='imagen/avada-kadabra.png' alt='Avada Kedavra' class='spell-image'>`;
+    
+        // Retrasar la apertura del enlace
+        setTimeout(() => {
+          spellEffect.style.opacity = "0"; // Esconde el efecto después de 1 segundo
+          window.open(targetUrl, "_blank");
+        }, 1000);
+      });
+    });
   
     // Revelar elementos de estudio con imágenes
     studyItems.forEach((item) => {
