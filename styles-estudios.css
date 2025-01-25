@@ -128,6 +128,7 @@ header {
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 20px;
+  background-image: url(/imagen/casas/banner\ fijo.png);
 }
 
 #banner-image {
@@ -164,6 +165,38 @@ nav ul li a:hover {
   color: #ffffff;
   text-shadow: 0 0 10px #ffd700; /* Efecto de brillo al pasar el mouse */
 }
+
+.side-banner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  max-width: 10vw;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;
+}
+
+#left-banner {
+  left: -100px; /* Ajusta esto si necesitas que esté más cerca o lejos del contenido */
+}
+
+#right-banner {
+  right: -100px; /* Ajusta esto si necesitas que esté más cerca o lejos del contenido */
+}
+
+.content-wrapper {
+  position: relative;
+  min-height: calc(100vh - 100px); /* Ajusta esto según la altura de tu footer */
+  z-index: 1;
+  background: rgba(18, 18, 18, 0.7);
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+}
+
 
 
 
