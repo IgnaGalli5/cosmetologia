@@ -1,121 +1,50 @@
-/* Estilos globales */
+:root {
+  --primary-color: #d1d1d1;
+  --background-color: #121212;
+  --accent-color: #808080;
+}
+
 body,
 html {
   margin: 0;
   padding: 0;
-  font-family: "Cinzel", serif; /* Usa la fuente Cinzel para todo el texto */
-  color: #d1d1d1; /* Color de texto principal */
-  background-color: #121212; /* Color de fondo oscuro */
+  font-family: "Cinzel", serif;
+  color: var(--primary-color);
+  background-color: var(--background-color);
   overflow-x: hidden;
   height: 100%;
-  cursor: none; /* Oculta el cursor predeterminado */
+  cursor: none;
 }
 
-/* Botones de selección de casa */
-.houses-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px 20px;
-}
-
-.house-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  margin-right: 50px;
-  width: 100px; /* Tamaño uniforme del botón */
-  height: 100px;
-  overflow: hidden; /* Asegura que las imágenes no sobresalgan */
-  border-radius: 10px; /* Bordes redondeados opcionales */
-  transition: transform 0.3s ease;
-}
-
-.house-button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Rellena el botón manteniendo proporciones */
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.house-button:hover img {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
-}
-
-/* Ajuste de posición para las imágenes de hechizos */
-#spell-effect {
-  position: fixed;
-  pointer-events: none;
-  z-index: 10000;
-  opacity: 0;
-  transition: opacity 0.3s;
-  top: 0;
-}
-
-
-
-/* Efecto de castillo de Hogwarts */
 .hogwarts-castle {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
-  perspective: 1000px; /* Crea un efecto 3D */
-}
-
-.castle-wall {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-  background-image: url("https://i.imgur.com/hogwarts-wall.jpg");
   background-size: cover;
-  transform-origin: center;
+  background-position: center;
+  transition: background-image 0.5s ease;
 }
 
-.house{
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  height: 80px;
-  width: 80px;
-  transform: scale(0.9);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-
-}
-
-.house img {
-
-  height: 80px;
-  width: 80px;
-
-
-}
-
-.castle-wall.left {
+.hogwarts-castle::before {
+  content: "";
+  position: absolute;
+  top: 0;
   left: 0;
-  transform: rotateY(5deg); /* Rota la pared izquierda */
-}
-
-.castle-wall.right {
   right: 0;
-  transform: rotateY(-5deg); /* Rota la pared derecha */
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .content-wrapper {
   position: relative;
-  z-index: 1;
-  background: rgba(18, 18, 18, 0.7); /* Fondo semi-transparente */
+  z-index: 2;
+  background: rgba(18, 18, 18, 0.7);
   margin: 0 auto;
   max-width: 1200px;
   padding: 20px;
-  box-shadow: 0 0 50px rgba(255, 215, 0, 0.3); /* Sombra dorada */
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
 }
 
-/* Estilos del encabezado */
 header {
   position: relative;
   width: 100%;
@@ -128,23 +57,6 @@ header {
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 20px;
-  background-image: url(/imagen/casas/banner\ fijo.png);
-}
-
-.side-banner {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 200px;
-  max-width: 10vw;
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 10;
-  animation: wave 3s infinite ease-in-out;
-  transform-origin: left center;
-  margin-left: -40px;
-  margin-right: -40px;
 }
 
 #banner-image {
@@ -154,7 +66,7 @@ header {
 }
 
 nav {
-  background-color: rgba(14, 26, 64, 0.8); /* Fondo semi-transparente para la navegación */
+  background-color: rgba(14, 26, 64, 0.8);
   padding: 10px 0;
   border-radius: 5px;
 }
@@ -171,7 +83,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #ffd700; /* Color dorado para los enlaces */
+  color: var(--accent-color);
   text-decoration: none;
   font-size: 1.2em;
   transition: color 0.3s;
@@ -179,72 +91,91 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #ffffff;
-  text-shadow: 0 0 10px #ffd700; /* Efecto de brillo al pasar el mouse */
+  text-shadow: 0 0 10px var(--accent-color);
 }
 
-
-
-@keyframes wave {
-  0% {
-    transform: rotateY(0deg);
-  }
-  25% {
-    transform: rotateY(10deg);
-  }
-  50% {
-    transform: rotateY(-10deg);
-  }
-  75% {
-    transform: rotateY(5deg);
-  }
-  100% {
-    transform: rotateY(0deg);
-  }
+.houses-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-#left-banner {
-  left: -100px; /* Ajusta esto si necesitas que esté más cerca o lejos del contenido */
+.house-button {
+  background-color: transparent;
+  border: none;
+  cursor: none;
+  padding: 5px;
+  margin: 0 10px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-#right-banner {
-  right: -100px; /* Ajusta esto si necesitas que esté más cerca o lejos del contenido */
+.house-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.content-wrapper {
-  position: relative;
-  min-height: calc(100vh - 100px); /* Ajusta esto según la altura de tu footer */
-  z-index: 1;
-  background: rgba(18, 18, 18, 0.7);
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 20px;
-  box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+.house-button:hover img {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
 }
 
-
-
-
-
-/* Estilos del contenido principal */
 h2 {
-  color: #ffd700;
+  color: var(--accent-color);
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 30px;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Efecto de brillo para los títulos */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .introduccion {
-  text-align: center;
+  text-align: justify;
   font-size: 1.2em;
   line-height: 1.6;
   margin-bottom: 40px;
+ 
+  user-select: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
-/* Estilos de la sección de estudios */
+.word {
+  display: flex;
+}
+
+.letter {
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+/* Animación de vibración al desordenarse */
+.glitch {
+  animation: glitch 0.2s linear infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  75% { transform: translate(1px, 1px); }
+  100% { transform: translate(-1px, -1px); }
+}
+
+
+
+
+
+
+
 .studies-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Diseño de cuadrícula responsiva */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
@@ -255,51 +186,22 @@ h2 {
   text-align: center;
   box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
   transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
-  opacity: 0;
-  transform: scale(0.9);
-  cursor: pointer;
+  cursor: none;
   position: relative;
   overflow: hidden;
-}
-
-.study-item::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0) 70%);
-  transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
-  transform: translate(-50%, -50%);
   opacity: 0;
-  pointer-events: none;
+  transform: scale(0.9);
 }
 
-.study-item:hover::before,
-.study-item.revealed::before {
-  width: 200%;
-  height: 200%;
-  opacity: 1;
-}
-
+.study-item.revealed,
 .study-item:hover,
-.study-item.revealed {
-  opacity: 1;
-  transform: scale(1);
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
-}
-
 .study-item.fixed {
   opacity: 1;
   transform: scale(1);
 }
 
-.study-item img,
-.study-item h3,
-.study-item p {
-  position: relative;
-  z-index: 1;
+.study-item.fixed {
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
 }
 
 .study-item img {
@@ -307,23 +209,33 @@ h2 {
   height: 100px;
   object-fit: contain;
   margin-bottom: 15px;
-  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5)); /* Sombra dorada para los iconos */
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
 }
 
 .study-item h3 {
-  color: #ffd700;
+  color: var(--accent-color);
   margin-bottom: 10px;
 }
 
-/* Estilos del pie de página */
+.spell-image.revelio {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: auto;
+  z-index: 10;
+}
+
 .magic-footer {
   position: relative;
   background-color: rgba(14, 26, 64, 0.8);
-  color: #d1d1d1;
+  color: var(--primary-color);
   text-align: center;
   padding: 20px 0;
   margin-top: 50px;
   overflow: hidden;
+  transition: background-color 0.5s ease;
 }
 
 .magic-container {
@@ -341,27 +253,19 @@ h2 {
   width: 100%;
   height: 100%;
   background-image: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0) 60%);
-  animation: magicSparkle 5s infinite;
+  animation: sparkle 5s infinite;
   opacity: 0;
 }
 
-.magic-sparkle:nth-child(2) {
-  animation-delay: -1.67s;
-}
-
-.magic-sparkle:nth-child(3) {
-  animation-delay: -3.33s;
-}
-
-@keyframes magicSparkle {
+@keyframes sparkle {
   0%,
   100% {
     opacity: 0;
-    transform: scale(0.5) translate(-50%, -50%);
+    transform: scale(0.5);
   }
   50% {
     opacity: 1;
-    transform: scale(1.2) translate(-50%, -50%);
+    transform: scale(1.2);
   }
 }
 
@@ -382,18 +286,17 @@ h2 {
 .logos {
   width: 30px;
   height: 30px;
-  transition: filter 0.3s, opacity 0.5s;
-  opacity: 1;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.logos:hover {
+  transform: scale(1.2);
 }
 
 .logos.bw {
   filter: grayscale(100%) brightness(0) invert(1);
 }
 
-.logos:hover {
-  transform: scale(1.2);
-}
-/* Cursor personalizado */
 #wand-cursor {
   position: fixed;
   width: 40px;
@@ -402,19 +305,10 @@ h2 {
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
-  z-index: 10001; /* Prioridad alta para que aparezca sobre otros elementos */
+  z-index: 10001;
   transform: translate(-50%, -50%);
 }
 
-.spell-image {
-  width: 100px;
-  height: auto;
-  pointer-events: none;
-  position: relative;
-  z-index: 10000;
-}
-
-/* Efecto de hechizo */
 #spell-effect {
   position: fixed;
   pointer-events: none;
@@ -423,29 +317,64 @@ h2 {
   transition: opacity 0.3s;
 }
 
+.side-banner {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  max-width: 10vw;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;
+  animation: wave 3s infinite ease-in-out;
+  transform-origin: left center;
+}
+
+#left-banner {
+  left: 0;
+}
+
+#right-banner {
+  right: 0;
+  transform-origin: right center;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(10deg);
+  }
+}
+
+.spell-image {
+  width: 50px;
+  height: auto;
+}
+
+.avada-kedavra {
+  width: 50px;
+  height: auto;
+}
+
+body,
 a,
 button,
 [role="button"],
 .study-item {
-  cursor: none !important; /* Asegura que el cursor personalizado se use en estos elementos */
+  cursor: none !important;
 }
 
-/* Ajustes responsivos */
-/* Ajustes responsivos */
 @media (max-width: 768px) {
-  .castle-wall {
-    width: 100%;
-    height: 50%;
+  .houses-container {
+    flex-wrap: wrap;
   }
 
-  .castle-wall.left {
-    top: 0;
-    transform: rotateX(5deg);
-  }
-
-  .castle-wall.right {
-    bottom: 0;
-    transform: rotateX(-5deg);
+  .house-button {
+    margin: 10px;
   }
 
   nav ul {
@@ -457,22 +386,8 @@ button,
     margin: 5px 0;
   }
 
-  .magic-footer {
-    padding: 30px 0;
+  .studies-container {
+    grid-template-columns: 1fr;
   }
 }
 
-@keyframes destroy {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-}
-
-.destroying {
-  animation: destroy 0.5s forwards;
-}

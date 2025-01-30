@@ -1,224 +1,303 @@
-// Espera a que el DOM esté completamente cargado antes de ejecutar el código
 document.addEventListener("DOMContentLoaded", () => {
-    const wandCursor = document.getElementById("wand-cursor")
-    const spellEffect = document.getElementById("spell-effect")
-    const studyItems = document.querySelectorAll(".study-item")
-    const houseButtons = document.querySelectorAll(".house-button")
-    const bannerImage = document.getElementById("banner-image")
-    const navBar = document.querySelector("nav")
-    const navLinks = document.querySelectorAll("nav a")
-    const titles = document.querySelectorAll("h2")
-    const footer = document.querySelector(".magic-footer")
-    const footerSparkles = document.querySelectorAll(".magic-sparkle")
-  
-    let isMouseDown = false
-  
-    // Cursor personalizado: mueve la varita siguiendo el ratón
-    document.addEventListener("mousemove", (e) => {
+  const wandCursor = document.getElementById("wand-cursor")
+  const spellEffect = document.getElementById("spell-effect")
+  const hogwartsCastle = document.querySelector(".hogwarts-castle")
+  const bannerImage = document.getElementById("banner-image")
+  const houseButtons = document.querySelectorAll(".house-button")
+  const studiesContainer = document.querySelector(".studies-container")
+  const leftBanner = document.getElementById("left-banner")
+  const rightBanner = document.getElementById("right-banner")
+  const footer = document.querySelector(".magic-footer")
+
+  const studyItems = [
+    {
+      name: "C#",
+      image: "imagen/c-sharp.png",
+      description: "El lenguaje de los magos avanzados, poderoso y versátil.",
+    },
+    {
+      name: "Python",
+      image: "imagen/python.png",
+      description: "Ágil como un hipogrifo, capaz de realizar tareas complejas con elegancia.",
+    },
+    {
+      name: "SQL",
+      image: "imagen/sql.png",
+      description: "El lenguaje de las bases de datos, tan vasto como la biblioteca de Hogwarts.",
+    },
+    {
+      name: "HTML y CSS",
+      image: "imagen/html-css.png",
+      description: "Los cimientos de la web, tan fundamentales como los hechizos básicos.",
+    },
+    {
+      name: "JavaScript",
+      image: "imagen/javascript.png",
+      description: "Dinámico y poderoso, como la magia de Dumbledore.",
+    },
+    {
+      name: "React",
+      image: "imagen/react.png",
+      description: "Una herramienta moderna, forjada con el poder de la magia avanzada.",
+    },
+  ]
+
+  let isMouseDown = false
+  let lightEffect = null
+
+  // Cursor personalizado
+  document.addEventListener("mousemove", (e) => {
+    requestAnimationFrame(() => {
       wandCursor.style.left = `${e.clientX}px`
       wandCursor.style.top = `${e.clientY}px`
     })
-  
-    // Efecto de hechizo al hacer clic
-    document.addEventListener("mousedown", (e) => {
-      isMouseDown = true
-      updateLumosEffect(e)
-    })
-  
-    document.addEventListener("mousemove", (e) => {
-      if (isMouseDown) {
-        updateLumosEffect(e)
-      }
-    })
-  
-    document.addEventListener("mouseup", () => {
-      isMouseDown = false
-      spellEffect.style.opacity = "0"
-      document.body.style.background = ""
-    })
-  
-    function updateLumosEffect(e) {
-      spellEffect.style.left = `${e.clientX}px`
-      spellEffect.style.top = `${e.clientY - 50}px` // Ajuste para subir la imagen del hechizo
-      spellEffect.style.opacity = "1"
-      spellEffect.innerHTML = `<img src='imagen/lumos.png' alt='Lumos' class='spell-image'>`
-  
-      const radius = 150
-      const gradient = `radial-gradient(circle ${radius}px at ${e.clientX}px ${e.clientY}px, 
-                                rgba(255, 255, 255, 0.8) 0%, 
-                                rgba(255, 255, 255, 0.6) 25%, 
-                                rgba(255, 255, 255, 0.4) 50%, 
-                                rgba(255, 255, 255, 0.2) 75%, 
-                                rgba(255, 255, 255, 0) 100%)`
-  
-      document.body.style.background = gradient
+  })
+
+  // Efecto de hechizo
+  document.addEventListener("mousedown", (e) => {
+    isMouseDown = true
+    updateSpellEffect(e)
+  })
+
+  document.addEventListener("mousemove", (e) => {
+    if (isMouseDown) {
+      updateSpellEffect(e)
     }
-  
-    // Cambiar estilos según la casa seleccionada
-  
-    function changeHouseTheme(house) {
-      const themes = {
-        gryffindor: {
-          color: "#1c0b0b",
-          background: "url('/imagen/casas/head-gry.jpg')",
-          banner: "/imagen/casas/head-gry.jpg",
-          navColor: "#9E1A1A",
-          footerColor: "#B71C1C",
-          bannerEffect: "linear-gradient(135deg, rgba(255,0,0,0.5), rgba(255,215,0,0.5))",
-          leftFlag: "imagen/casas/banner-gryffi.png",
-          rightFlag: "imagen/casas/banner-gryffi.png",
-        },
-        hufflepuff: {
-          color: "#5c5932",
-          background: "url('/imagen/casas/head-uff.jpg')",
-          banner: "/imagen/casas/head-uff.jpg",
-          navColor: "#E0C340",
-          footerColor: "#FFD700",
-          bannerEffect: "linear-gradient(135deg, rgba(255,223,0,0.5), rgba(255,255,255,0.5))",
-          leftFlag: "imagen/casas/banner-uff.png",
-          rightFlag: "imagen/casas/banner-uff.png",
-        },
-        ravenclaw: {
-          color: "#0a0d3d",
-          background: "url('imagen/casas/banner-rav.png')",
-          banner: "/imagen/casas/head-rave.jpg",
-          navColor: "#273B81",
-          footerColor: "#1D1F90",
-          bannerEffect: "linear-gradient(135deg, rgba(0,0,128,0.5), rgba(173,216,230,0.5))",
-          leftFlag: "imagen/casas/banner-rav.png",
-          rightFlag: "imagen/casas/banner-rav.png",
-        },
-        slytherin: {
-          color: "#15261b",
-          background: "url('imagen/casas/banner-sly.png')",
-          banner: "/imagen/casas/head-sly.jpg",
-          navColor: "#347D39",
-          footerColor: "#1A472A",
-          bannerEffect: "linear-gradient(135deg, rgba(0,100,0,0.5), rgba(192,192,192,0.5))",
-          leftFlag: "imagen/casas/banner-sly.png",
-          rightFlag: "imagen/casas/banner-sly.png",
-        },
-      }
-  
-      const theme = themes[house]
-      if (theme) {
-        document.body.style.setProperty("--primary-color", theme.color)
-        document.body.style.setProperty("--background-image", theme.background)
-        bannerImage.src = theme.banner
-        bannerImage.style.backgroundImage = theme.bannerEffect
-        bannerImage.style.backgroundBlendMode = "overlay"
-  
-        navBar.style.backgroundColor = theme.navColor
-        navLinks.forEach((link) => {
-          link.style.color = theme.color
-        })
-        titles.forEach((title) => {
-          title.style.color = theme.color
-        })
-        footer.style.backgroundColor = theme.footerColor
-        footerSparkles.forEach((sparkle) => {
-          sparkle.style.backgroundImage = `radial-gradient(circle, ${theme.color} 0%, rgba(0,0,0,0) 60%)`
-        })
-  
-        // Cambiar banderas
-        document.getElementById("left-banner").style.backgroundImage = `url('${theme.leftFlag}')`
-        document.getElementById("right-banner").style.backgroundImage = `url('${theme.rightFlag}')`
-      }
+  })
+
+  document.addEventListener("mouseup", () => {
+    isMouseDown = false
+    if (lightEffect) {
+      lightEffect.remove()
+      lightEffect = null
+    }
+    spellEffect.style.opacity = "0" // Ocultar el efecto de hechizo
+  })
+
+  function updateSpellEffect(e) {
+    const radius = 150 // Radio del efecto de luz
+    spellEffect.style.left = `${e.clientX}px`
+    spellEffect.style.top = `${e.clientY}px`
+    spellEffect.style.opacity = "1"
+    spellEffect.innerHTML = `<img src='imagen/lumos.png' alt='Lumos' class='spell-image'>`
+
+    // Crear o actualizar efecto de luz
+    if (!lightEffect) {
+      lightEffect = document.createElement("div")
+      lightEffect.style.position = "fixed"
+      lightEffect.style.pointerEvents = "none"
+      lightEffect.style.zIndex = "9999"
+      document.body.appendChild(lightEffect)
     }
 
-    document.querySelectorAll(".redes a").forEach(link => {
-      link.addEventListener("click", event => {
-        event.preventDefault(); // Evita que el enlace se abra inmediatamente
-        const targetUrl = event.currentTarget.href;
-    
-        // Aplicar efecto "Avada Kedavra"
-        const spellEffect = document.getElementById("spell-effect");
-        spellEffect.style.left = `${event.clientX}px`;
-        spellEffect.style.top = `${event.clientY - 50}px`;
-        spellEffect.style.opacity = "1";
-        spellEffect.innerHTML = `<img src='imagen/avada-kadabra.png' alt='Avada Kedavra' class='spell-image'>`;
-    
-        // Retrasar la apertura del enlace
-        setTimeout(() => {
-          spellEffect.style.opacity = "0"; // Esconde el efecto después de 1 segundo
-          window.open(targetUrl, "_blank");
-        }, 1000);
-      });
-    });
-  
-    // Revelar elementos de estudio con imágenes
-    studyItems.forEach((item) => {
-      item.addEventListener("mouseenter", () => {
-        if (!item.classList.contains("fixed")) {
-          revealStudyItem(item)
-        }
-      })
-  
-      item.addEventListener("mouseleave", () => {
-        if (!item.classList.contains("fixed")) {
-          hideStudyItem(item)
-        }
-      })
-  
-      item.addEventListener("click", () => {
-        if (item.classList.contains("fixed")) {
-          hideStudyItem(item)
-          item.classList.remove("fixed")
-        } else {
-          revealStudyItem(item)
-          item.classList.add("fixed")
-        }
-      })
-    })
-  
-    function revealStudyItem(item) {
-      item.style.opacity = "1"
-      item.style.transform = "scale(1)"
-  
-      if (!item.querySelector(".spell-image")) {
-        const spellImage = document.createElement("img")
-        spellImage.src = "imagen/revelio.png"
-        spellImage.alt = "Revelio"
-        spellImage.classList.add("spell-image")
-  
-        item.appendChild(spellImage)
-  
-        setTimeout(() => {
-          spellImage.remove()
-        }, 1500)
-      }
+    lightEffect.style.left = `${e.clientX - radius}px`
+    lightEffect.style.top = `${e.clientY - radius}px`
+    lightEffect.style.width = `${radius * 2}px`
+    lightEffect.style.height = `${radius * 2}px`
+    lightEffect.style.borderRadius = "50%"
+    lightEffect.style.background = "radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)"
+  }
+
+  // Cambiar estilos según la casa seleccionada
+  function changeHouseTheme(house) {
+    const themes = {
+      default: {
+        background: "url('/imagen/nada.jpg')",
+        banner: "/imagen/casas/hogwarts.png",
+        color: "#808080",
+        flag: null,
+        footerColor: "rgba(14, 26, 64, 0.8)",
+      },
+      gryffindor: {
+        background: "url('/imagen/casas/head-gry.jpg')",
+        banner: "/imagen/casas/head-gry.jpg",
+        color: "#eb0e24",//letras
+        flag: "imagen/casas/banner-gryffi.png",
+        footerColor: "#eb0e10",
+      },
+      hufflepuff: {
+        background: "url('/imagen/casas/head-uff.jpg')",
+        banner: "/imagen/casas/head-uff.jpg",
+        color: "#fae25a",
+        flag: "imagen/casas/banner-uff.png",
+        footerColor: "#ECB939",
+      },
+      ravenclaw: {
+        background: "url('/imagen/casas/head-rave.jpg')",
+        banner: "/imagen/casas/head-rave.jpg",
+        color: "#6d85fc",
+        flag: "imagen/casas/banner-rav.png",
+        footerColor: "#0E1A40",
+      },
+      slytherin: {
+        background: "url('/imagen/casas/head-sly.jpg')",
+        banner: "/imagen/casas/head-sly.jpg",
+        color: "#2db507",
+        flag: "imagen/casas/banner-sly.png",
+        footerColor: "#1A472A",
+      },
     }
-  
-    function hideStudyItem(item) {
-      if (!item.classList.contains("fixed")) {
-        item.style.opacity = "0"
-        item.style.transform = "scale(0.9)"
-      }
-    }
-  
-    // Iniciar las animaciones mágicas
-    function animateSparkles() {
-      const sparkles = document.querySelectorAll(".magic-sparkle")
-      sparkles.forEach((sparkle) => {
-        sparkle.style.left = `${Math.random() * 100}%`
-        sparkle.style.top = `${Math.random() * 100}%`
-        sparkle.style.animationDuration = `${3 + Math.random() * 2}s`
-      })
-    }
-  
-    animateSparkles()
-    setInterval(animateSparkles, 5000)
-  
-    // Set default house (e.g., Gryffindor)
-    changeHouseTheme("gryffindor")
-  
-    // Add click event listeners to house buttons
-    houseButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const house = button.dataset.house
-        changeHouseTheme(house)
-      })
+
+    const theme = themes[house] || themes.default
+    hogwartsCastle.style.backgroundImage = theme.background
+    bannerImage.src = theme.banner
+    document.documentElement.style.setProperty("--accent-color", theme.color)
+    leftBanner.style.backgroundImage = theme.flag ? `url('${theme.flag}')` : "none"
+    rightBanner.style.backgroundImage = theme.flag ? `url('${theme.flag}')` : "none"
+    footer.style.backgroundColor = theme.footerColor
+  }
+
+  // Agregar eventos a los botones de las casas
+  houseButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const house = button.dataset.house
+      changeHouseTheme(house)
     })
   })
-  
-  
+
+  // Generar elementos de estudio dinámicamente
+  function createStudyItems() {
+    studiesContainer.innerHTML = "" // Limpiar el contenedor antes de agregar elementos
+    studyItems.forEach((item) => {
+      const studyElement = document.createElement("div")
+      studyElement.className = "study-item"
+      studyElement.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <h3>${item.name}</h3>
+        <p>${item.description}</p>
+      `
+
+      studyElement.addEventListener("mouseenter", () => {
+        if (!studyElement.classList.contains("fixed")) {
+          revealStudyItem(studyElement)
+        }
+      })
+
+      studyElement.addEventListener("mouseleave", () => {
+        if (!studyElement.classList.contains("fixed")) {
+          hideStudyItem(studyElement)
+        }
+      })
+
+      studyElement.addEventListener("click", () => {
+        if (studyElement.classList.contains("fixed")) {
+          hideStudyItem(studyElement)
+          studyElement.classList.remove("fixed")
+        } else {
+          revealStudyItem(studyElement)
+          studyElement.classList.add("fixed")
+        }
+      })
+
+      studiesContainer.appendChild(studyElement)
+    })
+  }
+
+  function revealStudyItem(item) {
+    item.classList.add("revealed")
+    const spellImage = document.createElement("img")
+    spellImage.src = "imagen/revelio.png"
+    spellImage.alt = "Revelio"
+    spellImage.classList.add("spell-image", "revelio")
+    item.appendChild(spellImage)
+    setTimeout(() => {
+      spellImage.remove()
+    }, 1000)
+  }
+
+  function hideStudyItem(item) {
+    if (!item.classList.contains("fixed")) {
+      item.classList.remove("revealed")
+    }
+  }
+
+  // Modificar los enlaces de redes sociales para el efecto Avada Kedavra
+  document.querySelectorAll(".redes a").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault()
+      const targetUrl = event.currentTarget.href
+      const logo = event.currentTarget.querySelector(".logos")
+
+      spellEffect.style.left = `${event.clientX}px`
+      spellEffect.style.top = `${event.clientY - 25}px`
+      spellEffect.style.opacity = "1"
+      spellEffect.innerHTML = `<img src='imagen/avada-kadabra.png' alt='Avada Kedavra' class='avada-kedavra'>`
+
+      // Aplicar efecto de blanco y negro
+      logo.classList.add("bw")
+
+      setTimeout(() => {
+        spellEffect.style.opacity = "0"
+        window.open(targetUrl, "_blank")
+      }, 1000)
+    })
+  })
+
+  createStudyItems()
+
+  // Inicializar con el tema por defecto
+  changeHouseTheme("default")
+
+  const textElement = document.getElementById("textoAnimado")
+  if (textElement) {
+    const originalText = textElement.textContent
+    let isOrdered = false
+
+    function renderText(text, scramble = true) {
+      textElement.innerHTML = text
+        .split(" ")
+        .map(
+          (word) =>
+            `<span class="word">${(scramble ? shuffleText(word) : word)
+              .split("")
+              .map((letter) => `<span class="letter">${letter}</span>`)
+              .join("")}</span>`,
+        )
+        .join(" ")
+    }
+
+    // Generar texto desordenado al inicio
+    renderText(originalText, true)
+
+    textElement.addEventListener("mouseenter", () => {
+      if (!isOrdered) {
+        animateText(originalText)
+      }
+    })
+
+    textElement.addEventListener("mouseleave", () => {
+      if (!isOrdered) {
+        renderText(originalText, true)
+      }
+    })
+
+    textElement.addEventListener("click", () => {
+      isOrdered = true
+      animateText(originalText)
+    })
+
+    function animateText(finalText) {
+      const words = finalText.split(" ")
+      const wordElements = textElement.querySelectorAll(".word")
+
+      words.forEach((word, wordIndex) => {
+        const letters = wordElements[wordIndex].querySelectorAll(".letter")
+        word.split("").forEach((letter, letterIndex) => {
+          setTimeout(() => {
+            letters[letterIndex].textContent = letter
+            letters[letterIndex].classList.remove("glitch")
+            letters[letterIndex].style.transform = "translate(0, 0)"
+          }, letterIndex * 100)
+        })
+      })
+    }
+
+    function shuffleText(text) {
+      return text
+        .split("")
+        .sort(() => Math.random() - 0.5)
+        .join("")
+    }
+  }
+})
+
