@@ -33,7 +33,7 @@ header {
 #banner {
   position: relative;
   width: 100%; /* Ancho completo */
-  height: 350px; /* Altura fija */
+  height: 490px; /* Altura fija */
   overflow: hidden; /* Oculta contenido que se salga del contenedor */
 }
 

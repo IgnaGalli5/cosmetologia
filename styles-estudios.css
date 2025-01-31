@@ -14,6 +14,11 @@ html {
   overflow-x: hidden;
   height: 100%;
   cursor: none;
+
+  -webkit-user-select: none; /* Para navegadores basados en WebKit como Chrome y Safari */
+  -moz-user-select: none;    /* Para Firefox */
+  -ms-user-select: none;     /* Para Internet Explorer/Edge */
+  user-select: none;         /* Estándar */
 }
 
 .hogwarts-castle {
@@ -58,11 +63,11 @@ header {
   border-radius: 10px;
   margin-bottom: 20px;
 }
-
+/*BAnner*/
 #banner-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit:cover;
 }
 
 nav {
@@ -106,8 +111,8 @@ nav ul li a:hover {
   cursor: none;
   padding: 5px;
   margin: 0 10px;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
   border-radius: 10px;
   transition: transform 0.3s ease;
@@ -284,8 +289,8 @@ h2 {
 }
 
 .logos {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   transition: transform 0.3s, filter 0.3s;
 }
 

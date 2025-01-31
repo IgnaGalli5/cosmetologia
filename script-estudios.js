@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const themes = {
       default: {
         background: "url('/imagen/nada.jpg')",
-        banner: "/imagen/casas/hogwarts.png",
+        banner: "/imagen/casas/hoba.png",
         color: "#808080",
         flag: null,
         footerColor: "rgba(14, 26, 64, 0.8)",

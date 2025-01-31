@@ -39,8 +39,8 @@ body, html {
 }
 
 .magic-map {
-    background-image: url('/imagen/maplord.png');
-    background-size: contain; /* Ajusta el tamaño */
+    background-image: url('/imagen/hogwarts-harry-potter.jpg');
+    background-size:cover; /* Ajusta el tamaño */
     background-position: center;
 }
 
