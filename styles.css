@@ -600,7 +600,7 @@ footer {
 
   nav {
     width: 100%;
-    height: auto; /* Hace que el nav crezca si es necesario */
+    height: 100px; /* Hace que el nav crezca si es necesario */
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -617,8 +617,6 @@ footer {
 
   nav ul li {
     text-align: center;
-    
-    padding: 10px;
     border-radius: 5px;
   }
 
@@ -626,6 +624,8 @@ footer {
     color: white;
     text-decoration: none;
     display: block;
+    font-size: 15px;
+    margin-top: -5px;
   }
 
  
