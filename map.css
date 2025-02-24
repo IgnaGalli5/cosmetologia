@@ -90,8 +90,8 @@ body, html {
 /* Estilos base para el contenedor de GIFs */
 .location .gif-container {
     position: relative;
-    width: 52px;  /* Ancho del contenedor, ajustado al GIF más grande */
-    height: 71px; /* Alto del contenedor, mantiene la altura original */
+    width: 62px;  /* Ancho del contenedor, ajustado al GIF más grande */
+    height: 81px; /* Alto del contenedor, mantiene la altura original */
     margin: 0 auto;
 }
 

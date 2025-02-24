@@ -3,86 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mi</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sobre Mí - RPG</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js"></script>
+    <link rel="stylesheet" href="sobremi.css">
 </head>
 <body>
-    
-    <header>
-        <div id="banner">
-            <img src="banner.jpg" alt="Banner de Star Wars" id="banner-image">
-            <nav>
-                <ul>
-                    <li><a href="map.html"><span>inicio</span></a></li>
-                    <li><a href="inicio.html"><span>Proyectos</span></a></li>
-                    <li><a href="/index2.html" target="_blank"><span>Estudios</span></a></li>
-                    <li><a href="index3.html"><span>Sobre Mi</span></a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div id="portfolio-content">
-        <section id="inicio">
-            <h2>Bienvenido a mi portafolio</h2>
-            <p class="introduccion">
-                Bienvenid@s a mi portafolio,  soy un estudiante de programación
-                autodidacta, en el 2020 decidí cambiar radicalmente el camino que llevaba y me introduje en este maravilloso mundo
-                que me cautivó por completo, dejando de lado el hecho de tener 30 años y empezar desde cero. 
-                Con ayuda y disciplina fui aprendiendo y practicando, hice varios cursos, entre ellos aprendi C#, Python, SQL,
-                HTML, CSS y finalmente JS (hasta hoy). 
-                Mi idea es aprender aún mas lenguajes y herramientas para poder desarrollarme y crecer, porque realmente 
-                me enamoré de esta disciplina. 
-            </p>
-            <p class="datos">
-                Lugar de Residencia : <a class="est" href="https://goo.gl/maps/8FoP4AqcGmXET62L8" target="_blank">Monte Castro</a>,  Ciudad Autonoma de Buenos Aires, Argentina<br>
-                Idiomas: Español,Ingles intermedio<br>
-
-            </p>
-        </section>
-
-        <section id="proyectos">
-            <h2>Mis Proyectos</h2>
-            <div class="projects-container">
-                <a href="proyecto1.html" target="#">
-                    <img src="imagen/fondo.jpg" alt="Proyecto 1">
-                </a>
-                <a href="proyecto2.html" target="_blank">
-                    <img src="imagen/foo.jpg" alt="Proyecto 2">
-                </a>
-                <a href="proyecto3.html" target="_blank">
-                    <img src="imagen/foo.jpg" alt="Proyecto 3">
-                </a>
-                <a href="proyecto4.html" target="_blank">
-                    <img src="imagen/foo.jpg" alt="Proyecto 4">
-                </a>
-                <a href="proyecto5.html" target="_blank">
-                    <img src="imagen/foo.jpg" alt="Proyecto 5">
-                </a>
-                <a href="proyecto6.html" target="_blank">
-                    <img src="imagen/foo.jpg" alt="Proyecto 6">
-                </a>
-            </div>
-        </section>
-
-       
-
-        <section id="sobre-mi">
-            <h2>Sobre Mí</h2>
-            <p>Un poco acerca de quién soy y mis intereses...</p>
-        </section>
-    </div>
-
-    <svg id="laser-container"></svg>
-
-    <div id="starship-container">
-        <img id="starship-interior" src="nave.png" alt="Interior de la nave espacial">
-    </div>
-
-    <script src="script.js"></script>
+    <div id="game-container"></div>
+    <script src="sobremi.js" defer></script>
 </body>
-<footer>
-    <div class="redes">
+</html>
+
+  <!----  <div class="redes">
         
 
         <div class="redes">
@@ -93,9 +24,6 @@
         </div>
 
 
-    </div><!----------Fin de redes-->
+    </div>------Fin de redes-->
 
 
-</footer>
-
-</html>
