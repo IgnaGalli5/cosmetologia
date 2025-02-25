@@ -1,0 +1,732 @@
+
+
+:root {
+  --color-primary: #ffd1dc;
+  --color-secondary: #f1f1e1;
+  --color-text: #333;
+  --color-accent: #e7bac4;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Titillium Web", serif;
+  font-weight: 200;
+  font-style: normal;
+  text-decoration: none
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  
+}
+/* #region Header */
+header {
+  background-color: var(--color-secondary);
+  
+}
+
+
+
+.logo img {
+  max-width: 200px;
+  height: auto;
+  text-align: right;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 15px;
+  text-align: right;
+}
+
+.social-icon img {
+  width: 30px;
+  height: 30px;
+  transition: var(--transition);
+}
+
+.social-icon:hover img {
+  transform: scale(1.1);
+}
+
+.banner-animado {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+}
+nav {
+  background: linear-gradient(to bottom, #fa8072,  #f0afa8,  #fccec9);
+  padding: 15px;
+  height: 40px;
+ 
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  list-style-type: none;
+  font-size: 30px;
+  margin-top: 1px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+nav ul li a:hover {
+  color: var(--color-accent);
+}
+
+main {
+  flex-grow: 1;
+  padding: 60px ;
+}
+/* #endregion */
+/* #region **INTRODUCCION**/
+
+.titulo{
+  text-align: center;
+  font-size: 50px;
+}
+
+.introduccion{
+  max-width: 80%;
+  text-align: justify;
+  margin-left: 10%;
+  margin-top: 80px;
+  background-color: rgba(255, 255, 255, 0.3); /* Negro con 50% de transparencia */
+  border-radius: 20px;
+  
+}
+
+.introduccion h2{
+  font-size: 35px;
+  padding: 5px;
+}
+.introduccion p{
+  font-size: 30px;
+  padding: 5px;
+}
+/* #endregion */
+/* #region ===========TESTIMONIOS=====================**/
+.testimonios {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+  background: #f8c9c9d8;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonios h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.testimonios-contenedor {
+  position: relative;
+  min-height: 120px;
+}
+
+.testimonio {
+  display: none;
+  font-size: 18px;
+  color: #555;
+  padding: 10px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.testimonio.activo {
+  display: block;
+  opacity: 1;
+}
+
+.testimonio h4 {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+.botones-testimonio{
+  
+    display: flex;
+    gap: 5px;
+    justify-content:center;
+  
+}
+.botones-testimonio button{
+  width: 150px;
+}
+
+/* #endregion */
+/* #region ========================BOTONES==========================**/
+button {
+  background: #ff6b81;
+  color: rgb(235, 105, 105);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #ff4757;
+}
+
+
+
+#carrito-items {
+  width: 100%;
+  max-width: 600px;
+}
+
+.lista-productos {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* Distribuye los elementos */
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+ 
+}
+
+.producto-nombre {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.producto-precio {
+  text-align: center;
+}
+
+.producto-info{
+  background: #ece6e6;
+}
+
+.botones {
+  display: flex;
+  gap: 5px;
+  justify-content:center;
+}
+
+.botones button{
+  width: 175px;
+  
+}
+
+.btn-ventas {
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 4px;
+}
+
+.eliminar {
+  background-color: red;
+  color: white;
+}
+/* #endregion */
+/* #region ==========TRATAMIENTOS=========================*/
+.tratamientos {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Espacio entre tratamientos */
+
+}
+
+.tratamientos h2{
+  text-align: center;
+  font-size: 45px;
+}
+
+/* Ajustes para cada tratamiento */
+.tratamientos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tratamiento {
+  display: flex;
+  align-items: center;
+  background-color: #ece6e6;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  gap: 20px;
+  
+}
+
+/* Alterna la posición de la imagen */
+.tratamiento:nth-child(odd) {
+  flex-direction: row;
+}
+
+.tratamiento:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Ajustes para el texto */
+.tratamiento-info {
+  flex: 1;
+  font-weight: bold;
+  font-size: 20px;
+}
+.tratamiento-info h3{
+  font-size: 30px; 
+}
+/* Ajustes para la imagen */
+.tratamiento img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px rgba(252, 167, 180, 0.5);
+  flex-shrink: 0;
+}
+/* #endregion */
+/* #region-------QUITAR EFECTOS DE VINCULOS----------------------*/
+a {
+  text-decoration: none; /* Quita el subrayado */
+  color: inherit; /* Mantiene el color del texto sin cambios */
+}
+
+a:visited {
+  text-decoration: none; /* Asegura que siga sin subrayado */
+  color: inherit; /* Hace que el color sea el mismo que los enlaces no visitados */
+}
+/* #endregion*/
+/* #region ------------------COMPRAS---------------------------------*/
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.producto {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+}
+
+.producto img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.producto-info {
+  padding: 20px;
+}
+
+.producto-agregar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.cantidad-input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+ 
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+  
+}
+
+button:hover {
+  background-color: var(--color-accent);
+}
+
+#carrito {
+  background-color: var(--color-background);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-top: 40px;
+  background:  #ece6e6;;
+  width: 500px;
+  text-align: center;
+}
+
+.producto h3{
+  font-size: 30px;
+}
+.producto p{
+  font-size: 25px;
+}
+/* #endregion */
+
+/* #region ==================CONTACTO===================*/
+
+
+ .formulario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 90vh; /* Ajusta la altura sin ocupar toda la pantalla */
+        padding: 20px 0; /* Espaciado superior e inferior controlado */
+        font-size: 25px;
+        margin-top: 30px;
+      
+    }
+
+    .h1 {
+        text-align: center;
+    }
+
+    #formulario-contacto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 40%;
+     
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background: #ece6e6;
+    }
+
+    label {
+        align-self: flex-start;
+        margin-top: 10px;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    textarea {
+        resize: vertical;
+        height: 100px;
+    }
+/* #endregion */
+    
+
+/* #region ============BOTONES===================*/
+button {
+        margin-top: 15px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background: #f4dbf5;
+        color: rgb(17, 2, 2);
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .botones {
+      display: flex;
+      gap: 10px; /* Espacio entre botones */
+      width: 250px;
+  }
+  
+  button {
+      
+      font-size: 20px;
+  }
+
+    button:hover {
+        background: #d699f3;
+    }
+
+/* #endregion */
+/* #region ============FOOTER==============================*/
+
+
+footer {
+  background: linear-gradient(to bottom, #fccec9, #f0afa8, #fa8072);
+  
+ 
+  height: 500px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 0 20px;
+  font-size: 25px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.footer-links,
+.footer-redes {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li,
+.footer-redes li {
+  margin: 8px 0;
+}
+
+.footer-links a {
+  color: #444;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ab00fa;
+}
+
+.footer-redes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-redes img {
+  width: 50px;
+  transition: transform 0.3s;
+}
+
+.footer-redes img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-text);
+  font-size: 24px;
+}
+/* #endregion */
+/* #region ==========EFECTO FONDO==================*/
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(172, 168, 168) 50%, rgb(194, 181, 191) 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%); /* Inicia la animación desplazando el elemento un 25% a la izquierda */
+  }
+  100% {
+    transform: translateX(25%); /* Termina la animación desplazando el elemento un 25% a la derecha */
+  }
+}
+/* #endregion */
+
+/* #region ==================RESPONSIVE=======================*/
+@media (max-width: 768px) { /* Aplica los estilos solo cuando el ancho de la pantalla sea de 768px o menor (tablets y celulares) */
+
+  .header-top {
+    display: flex; /* Activa el modelo de caja flexible para alinear los elementos */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    width: 100%; /* Hace que el contenedor ocupe el 100% del ancho disponible */
+  }
+
+  .logo img {
+    max-width: 30%; /* Reduce el tamaño del logo a un máximo del 30% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+
+  nav ul {
+    flex-wrap: nowrap; /* Evita que los elementos bajen de línea */
+    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+    white-space: nowrap; /* Evita que los enlaces se rompan en varias líneas */
+   
+}
+
+nav ul li a {
+    font-size: 15px; /* Reduce el tamaño del texto aún más para móviles */
+    padding: 0;
+    
+    
+}
+
+  .banner-animado {
+    position: relative; /* Permite que los elementos hijos con position: absolute se posicionen dentro de este contenedor */
+    width: 100%; /* Asegura que el banner ocupe todo el ancho disponible */
+    height: auto; /* Mantiene la proporción de la imagen del banner */
+  }
+
+  .redes-sociales {
+    position: absolute; /* Posiciona el contenedor respecto al .banner-animado */
+    top: 10px; /* Separa el contenedor de redes sociales 10px desde la parte superior */
+    right: 10px; /* Separa el contenedor de redes sociales 10px desde la parte derecha */
+    display: flex; /* Usa flexbox para organizar los iconos de redes sociales */
+    gap: 10px; /* Separa los iconos entre sí con 10px */
+  }
+
+  .introduccion{
+    max-width: 80%;
+    text-align:center;
+    margin-left: 10%;
+    margin-top: 80px;
+    background-color: rgba(255, 255, 255, 0.3); /* Negro con 50% de transparencia */
+    border-radius: 20px;
+        
+  }
+.introduccion h1, h2{
+  font-size: 5px;
+}
+
+  .introduccion p{
+    font-size: 20px;
+  }
+
+  .titulo{
+    font-size: 25px;
+  }
+
+  .tratamiento{
+    text-align:center;
+
+  }
+
+  .tratamientos h2{
+
+    font-size: 25px;
+  }
+ 
+  main {
+    width: 100%; /* Hace que el contenido principal ocupe todo el ancho */
+    padding: 0; /* Elimina el relleno para optimizar el espacio en pantallas pequeñas */
+  }
+
+  .tratamiento {
+    flex-direction: column; /* Apila los elementos en una columna */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    width: 80%; /* Reduce el ancho del contenedor al 80% */
+    margin-left: 5%; /* Centra el contenedor dentro de la pantalla */
+  }
+
+  .tratamiento img {
+    margin-top: 10px; /* Añade un margen superior de 10px a las imágenes dentro de .tratamiento */
+  }
+
+  .tratamiento:nth-child(even),
+  .tratamiento:nth-child(odd) {
+    flex-direction: column; /* Asegura que todos los elementos se organicen en columna */
+  }
+
+  #formulario-contacto {
+    display: flex; /* Activa el modelo de caja flexible */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    justify-content: center; /* Centra el formulario verticalmente */
+    min-height: 90vh; /* Hace que el formulario ocupe al menos el 90% del alto de la pantalla */
+    padding: 10px 0; /* Añade un espaciado superior e inferior */
+    font-size: 25px; /* Ajusta el tamaño del texto */
+    margin-top: 30px; /* Separa el formulario de los elementos superiores */
+    width: 90%; /* Ajusta el ancho para mejor visibilidad */
+  }
+
+  #formulario-contacto input {
+    width: 70%; /* Ajusta el ancho de los campos de entrada del formulario */
+  }
+
+  #formulario-contacto label {
+    width: 70%; /* Ajusta el ancho de las etiquetas del formulario */
+    margin-left: 41px; /* Agrega un margen izquierdo para alineación */
+  }
+
+  #consulta {
+    width: 80%; /* Ajusta el ancho del área de consulta dentro del formulario */
+  }
+
+  footer {
+    height: 100%; /* Asegura que el footer ocupe su contenido completo */
+  }
+
+  #carrito {
+    background-color: var(--color-background); /* Usa una variable CSS para definir el color de fondo */
+    padding: 0; /* Elimina el relleno interno */
+    border-radius: var(--border-radius); /* Usa una variable CSS para definir las esquinas redondeadas */
+    box-shadow: var(--box-shadow); /* Usa una variable CSS para aplicar sombra */
+    margin-top: 40px; /* Separa el carrito de los elementos superiores */
+    background: #ece6e6; /* Color de fondo en caso de que la variable no esté definida */
+    width: 90%; /* Ajusta el ancho del carrito */
+    margin-left: 10px; /* Agrega un margen izquierdo */
+    margin-bottom: 15px; /* Agrega un margen inferior */
+  }
+ 
+  #carrito button {
+    gap: 0; /* Elimina el espacio entre elementos dentro del botón */
+    width: 40px; /* Define un ancho fijo para los botones del carrito */
+    padding: 0; /* Elimina el espaciado interno */
+    margin: 0; /* Elimina los márgenes */
+  }
+}
+/* #endregion */

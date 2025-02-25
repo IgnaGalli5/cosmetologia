@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Noelia Cosmetología Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+        </style>
+</head>
+<body>
+    <header>
+       
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <!-- Banner animado debajo de la sección de redes sociales y logo -->
+        <div class="banner-animado">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo de Noelia"> <!-- Imagen del logo con un texto alternativo -->
+            </div>
+            <!-- Íconos de redes sociales -->
+            <div class="redes-sociales">
+                <a href="#" class="social-icon"><img src="img/facebook.png" alt="Facebook"></a> <!-- Enlace a Facebook -->
+                <a href="#" class="social-icon"><img src="img/instagram.png" alt="Instagram"></a> <!-- Enlace a Instagram -->
+                <a href="#" class="social-icon"><img src="img/whatsapp.png" alt="WhatsApp"></a> <!-- Enlace a WhatsApp -->
+                <a href="#" class="social-icon"><img src="img/gorjeo.png" alt="X"></a> <!-- Enlace a la red social X (Twitter) -->
+            </div>
+        </div>
+       
+
+        <!-- Barra de navegación -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tratamientos.html">Tratamientos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="ventas.html">Ventas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="formulario">
+        <h1 class="h1">Contacto</h1>
+        <form id="formulario-contacto">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+    
+            <label for="consulta">Consulta:</label>
+            <textarea id="consulta" name="consulta" required></textarea>
+    
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>Noelia Cosmetología Profesional</h3>
+                <p>Cuidando tu belleza con profesionalismo y dedicación.</p>
+            </div>
+            <div class="footer-center">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tratamientos.html">Tratamientos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="ventas.html">Ventas</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h3>Síguenos</h3>
+                <div class="footer-redes-sociales">
+                    <a href="#" class="social-icon"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="#" class="social-icon"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="#" class="social-icon"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+                    <a href="#" class="social-icon"><img src="img/gorjeo.png" alt="X"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Noelia Cosmetología Profesional. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas - Noelia Cosmetología Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+        </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <header>
+       
+       
+        <!-- Banner animado debajo de la sección de redes sociales y logo -->
+        <div class="banner-animado">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo de Noelia"> <!-- Imagen del logo con un texto alternativo -->
+            </div>
+            <!-- Íconos de redes sociales -->
+            <div class="redes-sociales">
+                <a href="#" class="social-icon"><img src="img/facebook.png" alt="Facebook"></a> <!-- Enlace a Facebook -->
+                <a href="#" class="social-icon"><img src="img/instagram.png" alt="Instagram"></a> <!-- Enlace a Instagram -->
+                <a href="#" class="social-icon"><img src="img/whatsapp.png" alt="WhatsApp"></a> <!-- Enlace a WhatsApp -->
+                <a href="#" class="social-icon"><img src="img/gorjeo.png" alt="X"></a> <!-- Enlace a la red social X (Twitter) -->
+            </div>
+        </div>
+       
+
+        <!-- Barra de navegación -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tratamientos.html">Tratamientos</a></li>
+               
+                <li><a href="ventas.html">Ventas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="font-size: 50px;">Nuestros Productos</h1>
+        <div class="productos">
+            <div class="producto">
+                <img src="img/1.jpg" alt="Crema Hidratante">
+                <div class="producto-info">
+                    <h3>Crema Hidratante</h3>
+                    <p>Hidratación profunda para todo tipo de piel</p>
+                    <p>Precio: $25</p>
+                    <div class="producto-agregar">
+                        <input type="number" min="1" value="1" class="cantidad-input">
+                        <button onclick="agregarAlCarrito('Crema Hidratante', 25, this)">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="img/2.jpeg" alt="Serum Facial">
+                <div class="producto-info">
+                    <h3>Serum Facial</h3>
+                    <p>Fórmula concentrada para una piel radiante</p>
+                    <p>Precio: $35</p>
+                    <div class="producto-agregar">
+                        <input type="number" min="1" value="1" class="cantidad-input">
+                        <button onclick="agregarAlCarrito('Serum Facial', 35, this)">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="img/3.jpeg" alt="Mascarilla Facial">
+                <div class="producto-info">
+                    <h3>Mascarilla Facial</h3>
+                    <p>Tratamiento intensivo para una piel renovada</p>
+                    <p>Precio: $20</p>
+                    <div class="producto-agregar">
+                        <input type="number" min="1" value="1" class="cantidad-input">
+                        <button  onclick="agregarAlCarrito('Mascarilla Facial', 20, this)">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="img/4.jpeg" alt="Protector Solar">
+                <div class="producto-info">
+                    <h3>Protector Solar</h3>
+                    <p>Protección UVA/UVB de amplio espectro</p>
+                    <p>Precio: $30</p>
+                    <div class="producto-agregar">
+                        <input type="number" min="1" value="1" class="cantidad-input">
+                        <button  onclick="agregarAlCarrito('Protector Solar', 30, this)">Agregar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Puedes agregar más productos aquí siguiendo el mismo formato -->
+        </div>
+
+        <div id="carrito">
+            <h2>Carrito de Compras</h2>
+            <div id="carrito-items"></div>
+            <div id="carrito-total">Total: $0</div>
+            <button style="width: 250px;" class="btn-envio" onclick="enviarPedido()">Enviar Pedido</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>Noelia Cosmetología Profesional</h3>
+                <p>Cuidando tu belleza con profesionalismo y dedicación.</p>
+            </div>
+            <div class="footer-center">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tratamientos.html">Tratamientos</a></li>
+                   
+                    <li><a href="ventas.html">Ventas</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h3>Síguenos</h3>
+                <div class="footer-redes-sociales">
+                    <a href="#" class="social-icon"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="#" class="social-icon"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="#" class="social-icon"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+                    <a href="#" class="social-icon"><img src="img/gorjeo.png" alt="X"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Noelia Cosmetología Profesional. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
