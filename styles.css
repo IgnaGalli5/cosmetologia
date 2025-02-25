@@ -30,6 +30,11 @@ body {
 
   
 }
+
+
+
+
+
 /* #region Header */
 header {
   background-color: var(--color-secondary);
@@ -42,12 +47,14 @@ header {
   max-width: 200px;
   height: auto;
   text-align: right;
+  margin-left: 15px;
 }
 
 .redes-sociales {
   display: flex;
   gap: 15px;
   text-align: right;
+  margin-left: 25px;
 }
 
 .social-icon img {
@@ -77,14 +84,16 @@ nav {
 nav ul {
   display: flex;
   justify-content: center;
-  padding: 0;
+  padding: 5px ;
   list-style-type: none;
   font-size: 30px;
   margin-top: 1px;
+  gap: 150px;
 }
 
 nav ul li {
   margin: 0 15px;
+  
 }
 
 nav ul li a {
@@ -92,6 +101,7 @@ nav ul li a {
   color: var(--color-text);
   font-weight: bold;
   transition: var(--transition);
+ 
 }
 
 nav ul li a:hover {
@@ -123,11 +133,36 @@ main {
 .introduccion h2{
   font-size: 35px;
   padding: 5px;
+  text-align: center;
 }
 .introduccion p{
   font-size: 30px;
-  padding: 5px;
+  padding: 15px;
 }
+
+.introduccion .frase {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(7, 7, 7); /* Ajusta según el fondo */
+  position: relative;
+  overflow: hidden;
+  animation: brillo 2s infinite alternate;
+}
+
+@keyframes brillo {
+  0% {
+    text-shadow: -30px 0px 10px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    text-shadow: 0px 0px 20px rgb(247, 85, 85);
+  }
+  100% {
+    text-shadow: 30px 0px 10px rgba(161, 189, 167, 0.1);
+  }
+}
+
+
 /* #endregion */
 /* #region ===========TESTIMONIOS=====================**/
 .testimonios {
